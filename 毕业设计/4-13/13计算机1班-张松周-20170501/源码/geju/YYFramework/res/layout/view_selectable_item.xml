@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#fffcfcfc"
+    android:orientation="horizontal" >
+
+    <CheckBox
+        android:id="@+id/selected_item_cb"
+        style="@style/addFriends_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/applayout_leftorright"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="@dimen/applayout_leftorright"
+        android:background="#00000000"
+        android:focusable="false" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/selected_item_imgview"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00000000"
+        android:scaleType="centerCrop"
+        fresco:roundedCornerRadius="10dp"
+        fresco:placeholderImage="@drawable/default_user_icon"/>
+
+    <TextView
+        android:id="@+id/selected_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="name"
+        android:textColor="#ff333333"
+        android:textSize="16sp" />
+
+</LinearLayout>

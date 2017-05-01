@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:id="@+id/live_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingRight="2dp"
+        android:background="@color/white">
+        <app.logic.live.view.RoundAngleImageView
+            android:id="@+id/org_log"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:background="@drawable/business_card_itme"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/org_name"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="广东夸奖电商商业组织"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:lines="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/anchor_name_tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="昵称"
+                    android:textColor="@color/white"
+                    android:ellipsize="end"
+                    android:textSize="16sp"
+                    android:lines="1"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"/>
+
+                <TextView
+                    android:id="@+id/live_state1"
+                    android:gravity="end|right"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="休息中"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/live_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingLeft="2dp"
+        android:background="@color/white">
+        <app.logic.live.view.RoundAngleImageView
+            android:id="@+id/org_log2"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:background="@drawable/business_card_itme"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/org_name2"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="广东夸奖电商商业组织"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:lines="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/anchor_name_tv2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="昵称"
+                    android:textColor="@color/white"
+                    android:ellipsize="end"
+                    android:textSize="16sp"
+                    android:lines="1"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"/>
+
+                <TextView
+                    android:id="@+id/live_state2"
+                    android:gravity="end|right"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="直播中"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

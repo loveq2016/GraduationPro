@@ -1,0 +1,10 @@
+# use glob syntax. OR regexp
+syntax: glob
+#设置忽略后缀为bak,orig,swp的文件
+*.class
+*.orig
+*.swp
+#设置忽略后缀为Thumbs.db的文件
+Thumbs.db
+*.svn
+bin

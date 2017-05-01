@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp" >
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/tract_map_bg_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff0000" />
+        <!--
+        <LinearLayout 
+            android:id="@+id/tract_map_bg_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff0000"
+            android:orientation="horizontal"
+            >
+            
+        </LinearLayout>
+        -->
+
+        <RelativeLayout
+            android:id="@+id/tract_date_bg_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/tract_date_bg" >
+
+            <TextView
+                android:id="@+id/tract_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@drawable/tract_date_head"
+                android:drawablePadding="6dp"
+                android:drawableStart="@drawable/tract_date_head"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="2016-08-01"
+                android:textColor="#ff888888"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tract_org_bg_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/tract_date_bg" >
+
+            <TextView
+                android:id="@+id/tract_org_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="组织选择"
+                android:textColor="#ff888888"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <org.ql.views.listview.QLXListView
+        android:id="@+id/tract_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffffff"
+        android:divider="#E5E5E5"
+        android:dividerHeight="0.1dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false" />
+
+</LinearLayout>

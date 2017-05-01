@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/system_mask"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/applayout_leftorright"
+              android:paddingRight="@dimen/applayout_leftorright"
+              android:paddingTop="@dimen/applayout_leftorright">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/system_mask">
+        <!--android:background="@color/white"-->
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/item_card_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            fresco:placeholderImage="@drawable/default_user_icon"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/business_card_itme"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright">
+            <!--android:background="#90A1A1A1"-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_card_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView
+                    android:id="@+id/item_card_creator_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_16"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_card_com_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_16"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

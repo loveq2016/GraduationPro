@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@drawable/ll_live_baek"
+        android:gravity="center"
+        android:layout_height="100dp"
+        android:layout_width="100dp">
+        <ImageView
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon_select_live"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:text="该直播正在休息中"
+        android:textSize="18sp"
+        android:layout_marginTop="-45dp"
+        android:textColor="@color/black"
+        android:id="@+id/dialog_dateoff"
+        android:background="@drawable/shape_imgpicker_content_bg"
+        android:gravity="center"
+
+        android:layout_width="300dp"
+        android:layout_height="200dp"/>
+
+    <LinearLayout
+        android:id="@+id/dialog_to"
+        android:layout_marginTop="-45dp"
+        android:background="@drawable/shape_imgpicker_content_bg"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="300dp"
+        android:layout_height="200dp">
+        <TextView
+            android:layout_marginTop="15dp"
+            android:text="尚未加入该组织"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <View
+            android:layout_marginTop="15dp"
+            style="@style/line_style"/>
+
+
+            <LinearLayout
+                android:id="@+id/notorgcanlive_ll"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:textColor="#aa0a0a0a"
+                    android:text="加入该组织之后才可查看直播内容"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"/>
+                <View
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    style="@style/line_style"/>
+
+                <LinearLayout
+                    android:id="@+id/add_org_ll"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <ImageView
+                        android:src="@drawable/icon_add"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+                    <TextView
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="16sp"
+                        android:textColor="#aa0a0a0a"
+                        android:text="加入组织"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

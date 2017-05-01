@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/system_mask"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_padding_top"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingTop="@dimen/default_padding_top" >
+
+        <app.logic.live.view.RoundAngleImageView
+            android:id="@+id/org_head_iv"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/applayout_leftorright"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/org_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textColor="@color/new_textView_color"
+                android:textSize="@dimen/textSize_16" />
+
+            <TextView
+                android:id="@+id/org_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textSize="@dimen/textSize_14"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/default_padding_top"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingTop="@dimen/default_padding_top" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="组织介绍"
+            android:textColor="@color/new_textView_color"
+            android:textSize="@dimen/textSize_16" />
+
+        <TextView
+            android:id="@+id/org_ivt_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/textSize_14" />
+
+        <View
+            style="@style/line_style"
+            android:layout_marginTop="@dimen/default_padding_top" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_padding_top"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="@dimen/default_padding_top" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="组织电话"
+                android:textColor="@color/new_textView_color"
+                android:textSize="@dimen/textSize_16" />
+
+            <TextView
+                android:id="@+id/org_phone_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text=""
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_padding_top"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="@dimen/default_padding_top" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="组织地址"
+                android:textColor="@color/new_textView_color"
+                android:textSize="@dimen/textSize_16" />
+
+            <TextView
+                android:id="@+id/org_addr_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text=""
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_padding_top"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="@dimen/default_padding_top" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="组织成员"
+                android:textColor="@color/new_textView_color"
+                android:textSize="@dimen/textSize_16" />
+
+            <TextView
+                android:id="@+id/org_member_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text=""
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_padding_top"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="@dimen/default_padding_top" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电子邮箱"
+                android:textColor="@color/new_textView_color"
+                android:textSize="@dimen/textSize_16" />
+
+            <TextView
+                android:id="@+id/org_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text=""
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/org_join_btn"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="@dimen/applayout_leftorright"
+        android:layout_marginRight="@dimen/applayout_leftorright"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/shape_join_org_btn_bg"
+        android:text="申请加入"
+        android:textColor="@color/white" />
+
+</LinearLayout>

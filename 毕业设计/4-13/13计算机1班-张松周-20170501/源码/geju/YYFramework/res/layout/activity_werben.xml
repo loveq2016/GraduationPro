@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <View
+        android:id="@+id/iv1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="#FFD6D6D6" />
+
+    <EditText
+        android:id="@+id/title_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/iv1"
+        android:layout_marginLeft="15dp"
+        android:background="@color/transparent"
+        android:hint="公告标题"
+        android:textColorHint="#FFC2C2C2" >
+    </EditText>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@+id/title_et"
+        android:layout_alignParentLeft="true"
+        android:background="#FFECECEC" />
+
+    <EditText
+        android:id="@+id/name_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignTop="@id/view1"
+        android:layout_marginLeft="15dp"
+        android:background="@color/transparent"
+        android:hint="昵称"
+        android:textColorHint="#FFC2C2C2" >
+    </EditText>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@+id/name_et"
+        android:layout_alignParentLeft="true"
+        android:background="#FFECECEC" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/send_btn_bg"
+        android:layout_marginTop="8dp"
+        android:textColor="#FFFFFF"
+        android:text="发送" />
+
+    <EditText
+        android:id="@+id/text_et"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/name_et"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/transparent"
+        android:gravity="top"
+        android:hint="公告内容"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:textColorHint="#FFC2C2C2" >
+    </EditText>
+
+</RelativeLayout>

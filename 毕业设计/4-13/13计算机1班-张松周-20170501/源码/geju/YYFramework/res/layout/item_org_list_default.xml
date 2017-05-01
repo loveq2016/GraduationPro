@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+    <View
+        android:id="@+id/item_title_View"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/system_mask"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp" >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/item_org_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            fresco:roundedCornerRadius="10dp"
+            fresco:placeholderImage="@drawable/default_user_icon"/>
+
+        <TextView
+            android:id="@+id/item_org_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/item_org_iv"
+            android:textColor="@color/new_textView_color"
+            android:textSize="@dimen/textSize_16" />
+
+        <TextView
+            android:id="@+id/item_org_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/textSize_14"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

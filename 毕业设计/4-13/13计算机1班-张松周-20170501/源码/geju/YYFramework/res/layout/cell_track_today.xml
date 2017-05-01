@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/applayout_leftorright"
+    android:paddingRight="@dimen/applayout_leftorright"
+    android:paddingStart="8dp"
+    android:paddingTop="8dp" >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/cell_track_user_head_view"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="#ffffffff"
+        android:layout_marginBottom="7dp"
+        android:scaleType="centerCrop"
+        fresco:placeholderImage="@drawable/default_user_icon"
+        fresco:roundedCornerRadius="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingEnd="5dp"
+        android:paddingLeft="6dp"
+        android:paddingStart="6dp"
+        android:paddingTop="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/cell_track_name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textColor="#ff333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cell_track_time_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:text="00:00"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/cell_track_addr_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:maxLines="3"
+                android:text="addr"
+                android:textColor="#ff888888"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_title">天越现场管理</string>
+	<string name="notification_title">天越现场管理</string>
+	<string name="app_repleaseversion_name">天越现场管理</string><!-- 发行的版本名称 -->
+	
+	<string name="app_version_name">1.0.0</string><!-- 发行的渠道号 -->
+	<string name="app_channel_code">3</string><!-- 发行的渠道号 -->
+    
+</resources>

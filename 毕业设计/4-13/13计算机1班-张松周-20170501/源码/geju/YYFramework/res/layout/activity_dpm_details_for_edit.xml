@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/applayout_leftorright"
+                android:paddingEnd="@dimen/applayout_leftorright"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:paddingStart="@dimen/applayout_leftorright"
+                android:paddingTop="@dimen/applayout_leftorright" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="部门名称"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/textSize_18" />
+
+                <TextView
+                    android:id="@+id/dpm_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/transparent"
+                    android:hint="部门"
+                    android:minWidth="50dp"
+                    android:gravity="right|center"
+                    android:textSize="@dimen/textSize_18" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/applayout_leftorright"
+                android:paddingEnd="@dimen/applayout_leftorright"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:paddingStart="@dimen/applayout_leftorright"
+                android:paddingTop="@dimen/applayout_leftorright"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="部门负责人"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/textSize_18" />
+
+                <TextView
+                    android:id="@+id/dpm_principal_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="name"
+                    android:textSize="@dimen/textSize_18" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_bg" />
+
+            <GridView
+                android:id="@+id/all_menber_gv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:columnWidth="90dp"
+                android:listSelector="@color/app_blue"
+                android:numColumns="4" >
+            </GridView>
+
+            <Button
+                android:id="@+id/delect_dpm"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="@dimen/applayout_leftorright"
+                android:layout_marginRight="@dimen/applayout_leftorright"
+                android:layout_marginStart="@dimen/applayout_leftorright"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/shape_userinfo_btn"
+                android:text="解散部门"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/textSize_18" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

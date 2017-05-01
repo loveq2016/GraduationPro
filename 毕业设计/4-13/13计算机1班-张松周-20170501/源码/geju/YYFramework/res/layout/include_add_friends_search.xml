@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E5E5E5"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/applayout_leftorright"
+    android:paddingRight="@dimen/applayout_leftorright"
+    android:paddingTop="8dp" >
+
+    <EditText
+        android:id="@+id/add_friends_search_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/shape_include_add_friends_search"
+        android:drawableLeft="@drawable/search_icon2"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/search_icon2"
+        android:hint="输入手机号码"
+        android:singleLine="true"
+        android:textColor="#ff000000"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/add_friends_search_btn"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_alignRight="@+id/add_friends_search_et"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="1dp"
+        android:background="@drawable/shape_add_friends_btn"
+        android:text="搜索"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

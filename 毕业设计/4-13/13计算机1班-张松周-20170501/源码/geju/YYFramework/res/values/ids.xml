@@ -1,0 +1,26 @@
+<resources>
+
+    <item name="login_button" type="id">false</item>
+    <item name="register_button" type="id">false</item>
+    <item name="comment_button" type="id">false</item>
+    <item name="event_onling_tag" type="id">false</item>
+    <item name="event_result_tag" type="id">false</item>
+    <item name="auto_focus" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="encode_failed" type="id"/>
+    <item name="encode_succeeded" type="id"/>
+    <item name="launch_product_query" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+    <item name="search_book_contents_failed" type="id"/>
+    <item name="search_book_contents_succeeded" type="id"/>
+    
+    <!-- 日历控件 -->
+    <item name="mcv_pager" type="id"/>
+
+    <item type="id" name="bgaqrcode_camera_preview" />
+
+</resources>

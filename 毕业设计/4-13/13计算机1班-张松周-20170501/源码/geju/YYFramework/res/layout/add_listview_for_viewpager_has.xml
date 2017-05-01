@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <app.view.YYListView
+        android:id="@+id/add_listView_has"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/line_bg"
+        android:dividerHeight="@dimen/line_height"
+        android:headerDividersEnabled="false" >
+    </app.view.YYListView>
+
+    <LinearLayout
+        android:id="@+id/empty_view_has"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_layout_empty_view" />
+
+        <TextView
+            android:id="@+id/empty_tv01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="您还没有加入任何群聊"
+            android:textSize="@dimen/textSize_14" />
+
+        <TextView
+            android:id="@+id/empty_tv02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="赶紧去找个群聊加入吧"
+            android:textSize="@dimen/textSize_14" />
+
+    </LinearLayout>
+
+</FrameLayout>

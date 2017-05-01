@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_act_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/new_search_layout" />
+
+    <RelativeLayout
+        android:id="@+id/search_default_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp" >
+
+        <LinearLayout
+            android:id="@+id/gongao_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/tab_notice_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/tab_notice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="公告"
+                android:textColor="#555555"
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/geju_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/gongao_ll"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/tab_geju_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/tab_geju" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="格局"
+                android:textColor="#555555"
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/xiaoxi_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/gongao_ll"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/tab_news_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/tab_contacts" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="联系人"
+                android:textColor="#555555"
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <app.view.YYListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/line_bg"
+        android:dividerHeight="@dimen/line_height"
+        android:headerDividersEnabled="false"
+        android:visibility="gone" >
+    </app.view.YYListView>
+
+</LinearLayout>

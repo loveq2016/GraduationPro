@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/system_mask"
+             android:orientation="vertical">
+
+
+    <GridView
+        android:id="@+id/livestream_gv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@color/transparent"
+        android:columnWidth="128dp"
+        android:numColumns="2"></GridView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <ImageView
+            android:id="@+id/tag_iv"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="28dp"
+            android:layout_marginRight="28dp"
+            android:background="@color/transparent"
+            android:src="@drawable/icon_livestream"/>
+    </RelativeLayout>
+
+    <include layout="@layout/include_livestream_emptyview"/>
+
+</FrameLayout>

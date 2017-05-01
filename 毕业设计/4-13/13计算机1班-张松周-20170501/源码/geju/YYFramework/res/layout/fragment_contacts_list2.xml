@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#FFFFFF"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/new_friends_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <app.logic.live.view.RoundAngleImageView
+            android:id="@+id/new_friends"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="@dimen/applayout_leftorright"
+            android:layout_marginStart="@dimen/applayout_leftorright"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_new_friends"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/new_friends">
+
+            <TextView
+                android:id="@+id/new_friends_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新的朋友"
+                android:textColor="#FF000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <ImageView
+                android:id="@+id/point_iv"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_toRightOf="@id/new_friends_tv"
+                android:src="@drawable/red_point"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <View style="@style/line_style"/>
+
+    <RelativeLayout
+        android:id="@+id/chatRoom_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <app.logic.live.view.RoundAngleImageView
+            android:id="@+id/grounds_iv"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="@dimen/applayout_leftorright"
+            android:layout_marginStart="@dimen/applayout_leftorright"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_chatroom"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/grounds_iv"
+            android:text="群聊"
+            android:textColor="#FF000000"
+            android:textSize="@dimen/textSize_18"/>
+    </RelativeLayout>
+
+    <View style="@style/line_style"/>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@null"/>
+
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="80.0dp"
+            android:layout_height="80.0dp"
+            android:layout_gravity="center"
+            android:background="@drawable/show_head_toast_bg"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="30sp"
+            android:visibility="invisible"/>
+
+        <com.sort.sortlistview.SideBar
+            android:id="@+id/sidrbar"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right|center"
+            android:visibility="visible"/>
+
+        <include layout="@layout/include_empty_view"/>
+    </FrameLayout>
+
+</LinearLayout>

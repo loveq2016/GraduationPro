@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:paddingBottom="10dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_check_in_map_bg"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/cell_check_in_map_view"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp" >
+
+            <TextView
+                android:id="@+id/cell_check_in_addr_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:textColor="#ff333333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/cell_check_in_pick_addr_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="地址微调"
+                android:textColor="#ff33a6ff"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

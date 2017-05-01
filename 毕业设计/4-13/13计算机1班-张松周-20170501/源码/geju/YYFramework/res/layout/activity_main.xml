@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!--
+        <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FF00FF00"
+        android:src=""
+        />
+    -->
+
+
+    <!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+    -->
+    
+    <GridView 
+        android:id="@+id/test_show_photos"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:numColumns="4"
+        android:columnWidth="80dp"
+        ></GridView>
+
+    <EditText
+        android:id="@+id/tesing_output"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="textMultiLine" >
+		
+        <requestFocus />
+    </EditText>
+
+    
+    <Button
+        android:id="@+id/btn_openCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="72dp"
+        android:text="拍照" />
+    
+    <Button
+        android:id="@+id/btn_requestLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="72dp"
+        android:visibility="gone"
+        android:text="定位" />
+
+    <Button
+        android:id="@+id/tesing_upload_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_requestLocation"
+        android:layout_alignBottom="@+id/btn_requestLocation"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/btn_requestLocation"
+        android:visibility="gone"
+        android:text="上传图片" />
+
+</RelativeLayout>

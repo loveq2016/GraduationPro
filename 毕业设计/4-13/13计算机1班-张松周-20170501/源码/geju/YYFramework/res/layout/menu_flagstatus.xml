@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:layout_width="70dp"
+        android:layout_height="44dp"
+        android:text="未上传"
+        android:textSize="16sp"
+        android:textColor="#ffc6c6c6"
+        android:background="#fffcfcfc"
+        />
+    <ImageView 
+        android:layout_width="70dp"
+        android:layout_height="1dp"
+        android:background="#ffc6c6c6"
+        />
+    <Button 
+        android:layout_width="70dp"
+        android:layout_height="44dp"
+        android:text="已上传"
+        android:textSize="16sp"
+        android:textColor="#ffc6c6c6"
+        android:background="#fffcfcfc"
+        />
+
+</LinearLayout>

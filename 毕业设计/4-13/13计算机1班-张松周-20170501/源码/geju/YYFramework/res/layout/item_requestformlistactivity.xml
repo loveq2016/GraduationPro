@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/default_padding_top"
+    android:paddingLeft="@dimen/applayout_leftorright"
+    android:paddingRight="@dimen/applayout_leftorright"
+    android:paddingTop="@dimen/default_padding_top"
+    android:descendantFocusability="blocksDescendants">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_head_iv"
+        android:layout_width="@dimen/default_height"
+        android:layout_height="@dimen/default_height"
+        android:scaleType="centerCrop"
+        fresco:roundedCornerRadius="10dp"
+        fresco:placeholderImage="@drawable/default_user_icon" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:text=""
+            android:id="@+id/item_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+
+        <TextView
+            android:text="00000"
+            android:visibility="gone"
+            android:id="@+id/item_request_message_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize_14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/item_re_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/shape_join_org_btn_bg"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:padding="5dp"
+            android:text="同意"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_16" />
+    </LinearLayout>
+
+</LinearLayout>

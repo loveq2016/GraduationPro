@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/applayout_leftorright"
+        android:background="@color/system_mask" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_padding_top"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingTop="@dimen/default_padding_top" >
+
+        <app.logic.live.view.RoundAngleSimpleDraweeView
+            android:id="@+id/org_review_logo_view"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#ffffffff"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_user_icon" />
+
+        <TextView
+            android:id="@+id/org_review_name_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:text="组织"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/applayout_leftorright"
+        android:background="@color/system_mask" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="组织介绍"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <EditText
+            android:id="@+id/org_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="top|left"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize_14" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingStart="@dimen/applayout_leftorright" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="组织电话"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <EditText
+            android:digits="0123456789"
+            android:id="@+id/org_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:gravity="right"
+            android:hint=""
+            android:inputType="number"
+            android:minWidth="70dp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize_14" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <LinearLayout
+        android:id="@+id/org_addr_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <TextView
+            android:id="@+id/orgaddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="组织地址"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <EditText
+            android:id="@+id/org_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="top|left"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize_14" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:id="@+id/org_memberNum"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingStart="@dimen/applayout_leftorright" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="组织成员"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <TextView
+            android:id="@+id/org_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:focusable="false"
+            android:gravity="right"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize_14" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingStart="@dimen/applayout_leftorright" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="电子邮箱"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <EditText
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHILKLMNOPQRSTUVWXYZ.@"
+            android:id="@+id/org_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:gravity="right"
+            android:hint=""
+            android:inputType="textEmailAddress"
+            android:minWidth="70dp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/textSize_14" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:id="@+id/org_qrcode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingStart="@dimen/applayout_leftorright" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="组织二维码"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <ImageView
+            android:id="@+id/org_qrcode"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/scan_qr" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:id="@+id/apply_for_list"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingStart="@dimen/applayout_leftorright"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="申请列表"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:src="@drawable/to_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:id="@+id/add_friend_to_org"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingStart="@dimen/applayout_leftorright"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="添加成员"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_16" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:src="@drawable/to_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <include
+        android:id="@+id/foot_view"
+        layout="@layout/org_review_footview"
+        android:visibility="gone" />
+
+</LinearLayout>

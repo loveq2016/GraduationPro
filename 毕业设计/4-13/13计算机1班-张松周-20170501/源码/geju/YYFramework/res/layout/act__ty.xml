@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titleBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="48dp"
+    android:background="@color/acttitle2_bg" >
+
+    <RelativeLayout
+        android:id="@+id/centerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <org.ql.views.textview.FTextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="3dip"
+            android:layout_marginRight="3dip"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="title"
+            android:textColor="@color/app_title_tc"
+            android:textSize="@dimen/app_title_ts" />
+
+        <ImageView
+            android:id="@+id/centerIv"
+            android:layout_width="15dp"
+            android:layout_height="8dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@android:id/title"
+            android:src="@drawable/titledown_iv"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/leftLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@android:id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/btn_back_selector" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rightLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="0dip"
+        android:layout_marginRight="0dip" >
+
+        <Button
+            android:id="@android:id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn_default_clearcolor"
+            android:textColor="#fffcfcfc"
+            android:textSize="@dimen/textSize_18"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</RelativeLayout>

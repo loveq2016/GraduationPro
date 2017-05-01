@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="秘书处"
+        android:textColor="#444"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/show_manager"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentLeft="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:textColor="#444"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/number"
+        android:layout_toLeftOf="@+id/button_right"
+        android:textSize="20sp"/>
+    <ImageButton android:layout_height="19dp"
+        android:layout_width="10dp"
+        android:id="@+id/button_right"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerInside"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_right"
+        android:layout_alignParentRight="true"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/divider"
+        android:layout_below="@+id/show_manager"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/line_horizontal_bg"
+        />
+</RelativeLayout>

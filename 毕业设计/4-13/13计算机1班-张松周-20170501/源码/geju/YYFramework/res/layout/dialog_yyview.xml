@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="#e5e5e5"
+        android:gravity="center"
+        android:text="title"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingStart="@dimen/applayout_leftorright"
+        android:paddingBottom="16dp" >
+
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="message"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/dialog_editText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:hint="请输入"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/line_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_bg" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp" >
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@color/line_bg" />
+
+        <Button
+            android:id="@+id/sure_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@id/view2"
+            android:layout_alignRight="@id/view2"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_btn_bg"
+            android:text="确认" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/view2"
+            android:layout_alignStart="@id/view2"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_btn_bg"
+            android:text="取消" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:id="@+id/funcation_item_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:lines="1"
+                android:text=""
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" >
+
+            <ImageView
+                android:id="@+id/delect_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/delect_btn_bg"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

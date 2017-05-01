@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="app.yy.geju"
+    android:versionCode="41"
+    android:versionName="1.1.01">
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="22"/>
+
+    <permission
+        android:name="app.yy.geju.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature"/>
+
+    <!-- 小米推送 -->
+    <permission
+        android:name="app.yy.geju.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signatureOrSystem"/>
+
+    <uses-permission android:name="app.yy.geju.permission.MIPUSH_RECEIVE"/>
+    <uses-permission android:name="app.yy.geju.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_GPS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+    <uses-feature android:name="android.hardware.microphone"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--< 直播 >-->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <!-- common -->
+    <!-- for live -->
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
+
+    <!--   百度导航   -->
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+
+
+    <application
+        android:name="app.config.DemoApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/app_portrait">
+
+
+        <!-- 极光推送 设置开始 -->
+        <!-- Rich push 核心功能 since 2.0.6 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle">
+        </activity>
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="app.yy.geju"/>
+            </intent-filter>
+        </activity>
+        <!-- Required  SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService"/>
+
+                <category android:name="app.yy.geju"/>
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <!-- Required  显示通知栏 -->
+                <category android:name="app.yy.geju"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false"/>
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default"/>
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="5677e1e594425b31f46d31ae"/>
+        <!-- 极光推送 设置结束 -->
+
+
+        <!-- umeng -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57bcfcaa67e58eb3c7001d65">
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="广州悦云">
+        </meta-data>
+
+        <!-- 百度地图 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="n9nzbvkkX9nKVFlcGlqDkHfcGrgoH9WB"/>
+
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true" />
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true" />
+
+        <!-- 百度地图 -->
+
+
+        <!-- 环信 gzyueyun#gzyyxiehuimng -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="gzyueyun#testgejue" />
+        <!--android:value="gzyueyun#gzyyxiehuimng" gzyueyun#testgejue/>-->
+
+
+
+        <!-- 声明sdk所需的service SDK核心功能 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true"/>
+
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 这里开始是应用程序的内容 -->
+
+
+        <!-- 服务 & 广播监听器 -->
+        <service
+            android:name="app.utils.service.DateTimeService"
+            android:icon="@drawable/ic_launcher">
+        </service>
+        <service android:name="app.utils.service.YYDownloadService">
+        </service>
+
+        <receiver android:name="app.utils.service.DateTimeSynModel">
+        </receiver>
+        <receiver
+            android:name="app.utils.service.TYPushReceive"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <action android:name="notification_FriendRequest"/>
+
+                <category android:name="app.yy.geju"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="app.utils.service.ScreenStatuReciver">
+            <intent-filter android:priority="90000">
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 小米推送 -->
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService"/>
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true"/>
+
+        <receiver
+            android:name="com.hyphenate.chat.EMMipushReceiver"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR"/>
+            </intent-filter>
+        </receiver>
+
+
+        <!--<receiver-->
+            <!--android:name="com.xiaomi.push.service.receivers.PingReceiver"-->
+            <!--android:exported="false"-->
+            <!--android:process=":pushservice">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.xiaomi.push.PING_TIMER"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--&lt;!&ndash; 华为推送 &ndash;&gt;-->
+        <receiver android:name="com.hyphenate.chat.EMHuaweiPushReceiver">
+        <intent-filter>
+
+        <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+        <!--&lt;!&ndash; 必须，用于接收消息 &nd、ash;&gt;-->
+        <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+        </intent-filter>
+
+        <meta-data
+        android:name="CS_cloud_ablitity"
+        android:value="successRateAnalytics"/>
+        </receiver>
+
+        <!-- PushSDK:PushSDK接收外部请求事件入口 -->
+        <receiver
+            android:name="com.huawei.android.pushagent.PushEventReceiver"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REFRESH_PUSH_CHANNEL"/>
+                <action android:name="com.huawei.intent.action.PUSH"/>
+                <action android:name="com.huawei.intent.action.PUSH_ON"/>
+                <action android:name="com.huawei.android.push.PLUGIN"/>
+            </intent-filter>
+        </receiver>
+        <!-- PushSDK:Push服务 -->
+        <service
+            android:name="com.huawei.android.pushagent.PushService"
+            android:process=":pushservice">
+        </service>
+
+        <!--<service android:name="app.utils.service.YYIMService"-->
+            <!--&gt;-->
+            <!--<intent-filter>-->
+
+                <!--&lt;!&ndash; 接收到通知后处理的Service &ndash;&gt;-->
+                <!--<action android:name="com.lanshui.mobile.MYGETPUSH_ORDER_ACTION" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+        <!--<service android:name="app.utils.service.YYIMServiceB"-->
+            <!--&gt;-->
+            <!--<intent-filter>-->
+
+                <!--&lt;!&ndash; 接收到通知后处理的Service &ndash;&gt;-->
+                <!--<action android:name="com.lanshui.mobile.MYGETPUSH_ORDER_ACTION" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+
+        <!--<receiver-->
+            <!--android:name="app.utils.service.YYTimeTickReceiver">-->
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.TIME_TICK"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!-- Activity -->
+        <activity
+            android:name="app.logic.activity.user.LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.Welcome2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/windowallwhite">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.ForgetpswActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.RegActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--<activity-->
+            <!--android:name="app.logic.activity.user.Reg2Activity"-->
+            <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
+        <activity
+            android:name="app.logic.activity.main.HomeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.friends.AddFriendsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hyphenate.easeui.ui.activity.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.chat.ChatRoomInfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="app.logic.activity.chat.ChatRoomListActivity">
+        </activity>
+        <activity android:name="app.logic.activity.chat.ChatRoomMemberListActivity">
+        </activity>
+        <activity
+            android:name="app.logic.activity.card.CardDetailsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.card.CardListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.card.AddCardActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.UserInfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.PreviewFriendsInfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.friends.FriendsListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.OrganizationListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.OrganizationDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.DPMListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.DPMDetailsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.view.web.WebBrowserActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.view.RichTextViewActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.MyOrgList"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.checkin.CheckInMainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--<activity-->
+        <!--android:name="com.easemob.chatuidemo.activity.BaiduMapActivity"-->
+        <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
+        <activity
+            android:name="app.logic.activity.card.CardDetailsActivity2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+        </activity>
+        <activity
+            android:name="app.logic.activity.announce.AnnounceActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.notice.NoticeDetailsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.checkin.MyTraceActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.CreateOranizationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.RequestJoinOrganizationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.JoinOrganizationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.view.RichTextViewActivity2"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.RequestFormListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--<activity-->
+        <!--android:name="com.easemob.chatuidemo.activity.ShowBigImage"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:theme="@style/transcutestyle">-->
+        <!--</activity>-->
+        <activity
+            android:name="app.utils.helpers.LocationPicker"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--<activity-->
+        <!--android:name="com.easemob.chatuidemo.activity.ImageGridActivity"-->
+        <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.easemob.chatuidemo.activity.RecorderVideoActivity"-->
+        <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.easemob.chatuidemo.activity.ShowVideoActivity"-->
+        <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.easemob.chatuidemo.activity.AlertDialog"-->
+        <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.easemob.chatuidemo.activity.ContextMenu"-->
+        <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
+        <activity
+            android:name="app.logic.activity.calendar.MainCalendarActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.calendar.AddCalendarActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.DPMDetailsForEditActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.OrganizationDetailActivity2"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.AddDPMActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.SelectMemberToDPMActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.SelectMemberToDPMEDActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.friends.AddFriendToChatRoom"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.AddFriendToOrg"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.org.OrganizationAllMemberShow"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.AboutMeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.about.SettingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.about.HelpAndFeedbackActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.about.AboutYueyunActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.ShowBigImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/transcutestyle">
+        </activity>
+        <activity
+            android:name="app.logic.activity.announce.ShowBigImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/transcutestyle">
+        </activity>
+        <activity
+            android:name="app.logic.activity.user.SpaceImageDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- new Version -->
+        <activity
+            android:name="app.logic.activity.launch.LaunchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/windowallwhite">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="app.logic.activity.search.SearchActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.notice.OrgNoticeDefaultActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.notice.DefaultNoticeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.org.SearchOrgDefailsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.friends.FriendsListActivity2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.org.OrganizationListActivity2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.friends.LogicFriends"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.card.CardListActivity2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.org.DPMDetailsForEditActivity2"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name="app.logic.activity.checkin.MyOrganizaActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.checkin.CheckInMainActivity2"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.announce.MyOrgActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.org.ApplyAssociActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.org.ApplyToJoinActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.checkin.CheckInMainActivityYSF"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.card.CardDetailsActivity3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+
+        <activity
+            android:name="com.zxing.activity.ScanActivity"
+            android:screenOrientation="portrait"/>
+        <!--直播ACT -->
+        <!--<activity-->
+            <!--android:name="app.logic.activity.livestream.LiveOrgListActivity"-->
+            <!--android:screenOrientation="portrait"/>-->
+
+        <activity
+            android:name="app.logic.activity.live.LiveListActivty"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.live.LiveDetailsActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="app.logic.activity.live.StartLiveActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+
+
+        <!--  百度导航 -->
+        <!--android:configChanges="orientation|screenSize|keyboard|keyboardHidden"-->
+        <activity
+            android:name="app.logic.activity.navi.BNDemoGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:label="@string/title_route_guide_demo" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>

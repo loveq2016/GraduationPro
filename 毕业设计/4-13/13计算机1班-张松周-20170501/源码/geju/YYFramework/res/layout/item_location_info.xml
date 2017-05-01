@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 定位信息显示控件 -->
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:background="#00000000"
+            android:src="@drawable/ty_location" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="定位"
+            android:textColor="@color/default_text_color"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_linearLayout1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="(第一步：定位当前位置)"
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_linearLayout2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="经度："
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/item_location_longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_linearLayout3"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="纬度："
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/item_location_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="#00ffffff"
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_linearLayout4"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="位置："
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/item_location_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_linearLayout5"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="时间："
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/item_location_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_linearLayout6"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="状态："
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/item_location_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:textColor="#ff33cc33"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/item_location_btn"
+        style="@style/ty_app_default_button"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/location_linearLayout7"
+        android:layout_marginTop="10dp"
+        android:text="重新定位"
+        android:textSize="@dimen/ty_btn_normal_textsize" />
+
+    <Button
+        android:id="@+id/item_mapview_btn"
+        style="@style/ty_app_default_button"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/location_linearLayout7"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:text="查看地图"
+        android:textSize="@dimen/ty_btn_normal_textsize" />
+</RelativeLayout>

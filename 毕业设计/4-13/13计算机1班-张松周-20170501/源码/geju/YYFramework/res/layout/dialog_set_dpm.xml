@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_item_card_llbg"
+    android:orientation="vertical" >
+
+    <app.view.YYListView
+        android:id="@+id/dpm_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/line_bg"
+        android:dividerHeight="@dimen/line_height"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="@color/app_blue" >
+    </app.view.YYListView>
+
+</LinearLayout>

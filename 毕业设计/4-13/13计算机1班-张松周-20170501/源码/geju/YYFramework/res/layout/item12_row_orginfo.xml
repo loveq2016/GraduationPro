@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="#fffcfcfc"
+    android:paddingBottom="8dp"
+    android:paddingEnd="@dimen/applayout_leftorright"
+    android:paddingLeft="@dimen/applayout_leftorright"
+    android:paddingRight="@dimen/applayout_leftorright"
+    android:paddingStart="@dimen/applayout_leftorright"
+    android:paddingTop="8dp" >
+
+    <ImageView
+        android:id="@+id/left_imageview"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/default_user_icon"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/top_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toRightOf="@id/left_imageview"
+        android:lines="1"
+        android:singleLine="true"
+        android:text="name"
+        android:textColor="#ff000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:lines="1"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:text="审核拒绝"
+        android:textSize="18sp" />
+
+</RelativeLayout>

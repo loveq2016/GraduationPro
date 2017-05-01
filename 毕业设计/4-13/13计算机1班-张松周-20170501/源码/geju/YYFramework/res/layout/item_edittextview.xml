@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="43dp"
+    android:orientation="horizontal"
+    android:background="#ff000000"
+    >
+    <ImageView
+        android:id="@+id/item_inputBoxBgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:background="@drawable/ty_loginform"
+        />
+    
+     <RelativeLayout
+        android:layout_width="match_parent"
+    	android:layout_height="43dp"
+    	android:orientation="horizontal"
+    	android:background="#00000000">
+
+	    <TextView
+	        android:id="@+id/item_editTextViewTitle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginLeft="5dp"
+	        android:textSize="18sp"
+	        android:textColor="#ff6d6d6d"
+	        android:background="#00ffffff"
+	        android:text="测试"/>
+	
+	    <EditText
+	        android:id="@+id/item_editTextViewContenBox"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_alignRight="@dimen/padding_large"
+	        android:layout_centerVertical="true"
+	        android:layout_toRightOf="@+id/item_editTextViewTitle"
+	        android:layout_marginTop="2dp"
+	        android:layout_marginBottom="2dp"
+	        android:layout_marginRight="2dp"
+	        android:layout_marginLeft="15dp"
+	        android:background="#ffffffff"
+	        android:hint="测试"
+	        android:singleLine="true"
+	        >
+	    </EditText>
+	    
+	    <ImageView 
+	        android:id="@+id/item_editTextViewIcon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ty_user_cion"
+	        android:background="#00ffffff"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginRight="15dp"
+	        />
+    </RelativeLayout>
+    
+</FrameLayout>

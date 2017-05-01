@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/title_add_iv"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_height="48dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_chat_add" />
+
+</LinearLayout>

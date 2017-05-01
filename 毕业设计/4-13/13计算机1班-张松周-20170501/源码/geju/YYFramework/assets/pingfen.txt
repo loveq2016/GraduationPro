@@ -1,0 +1,17 @@
+﻿[
+{
+"PingFenItemName":"未开工",
+"PingFenItemValue":1,
+"PingFenItemId":107
+},
+{
+"PingFenItemName":"施工中",
+"PingFenItemValue":2,
+"PingFenItemId":108
+},
+{
+"PingFenItemName":"已完工",
+"PingFenItemValue":3,
+"PingFenItemId":109
+}
+]

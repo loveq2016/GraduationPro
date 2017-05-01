@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffcfcfc"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/nomamer_rl"
+        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:hint="当前部门没有成员"/>
+        <View
+            android:layout_alignParentBottom="true"
+            android:background="#55555555"
+            android:layout_height="1dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"/>
+    </RelativeLayout>
+
+    <app.view.YYListView
+        android:id="@+id/dpm_details_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/line_bg"
+        android:dividerHeight="@dimen/line_height"
+        android:headerDividersEnabled="false" >
+    </app.view.YYListView>
+
+</RelativeLayout>

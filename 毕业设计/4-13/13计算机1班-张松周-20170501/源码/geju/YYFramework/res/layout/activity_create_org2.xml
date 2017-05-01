@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/system_mask"
+        android:orientation="vertical"
+        android:paddingBottom="35dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/orgcreate_org_orgname_et"
+                style="@style/create_org_relativelayout">
+
+                <EditText
+                    android:id="@+id/create_org_orgname_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:hint="组织名称"
+                    android:textColor="#ff000000"
+                    android:textColorHint="@color/new_create_org_hintcolor"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView style="@style/create_org_error_tv"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgcreate_org_orgname_et"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/org"
+                style="@style/create_org_relativelayout">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="组织标志"
+                    android:textColor="@color/new_create_org_hintcolor"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/create_org_logo_iv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    fresco:placeholderImage="@drawable/icon_org_add"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_logo_urlTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/org"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+
+        </RelativeLayout>
+        <!--style="@style/create_org_edittext"-->
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <!--android:textColor="@color/new_create_org_hintcolor"-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/orgcreate_org_tel_et"
+                style="@style/create_org_relativelayout">
+
+                <EditText
+                    android:digits="0123456789"
+                    android:id="@+id/create_org_tel_et"
+                    style="@style/create_org_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="组织电话"
+                    android:textColor="#ff000000"
+                    android:inputType="number"
+                    android:textSize="@dimen/textSize_16"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_telTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgcreate_org_tel_et"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <!--android:textColor="@color/new_create_org_hintcolor"-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/orgcreate_org_addr_et"
+                style="@style/create_org_relativelayout">
+
+                <EditText
+                    android:id="@+id/create_org_addr_et"
+                    style="@style/create_org_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="组织地址"
+                    android:textColor="#ff000000"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView style="@style/create_org_error_tv"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_addrTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgcreate_org_addr_et"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <!--android:textColor="@color/new_create_org_hintcolor"-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/orgcreate_org_email_et"
+                style="@style/create_org_relativelayout">
+
+                <EditText
+                    android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHILKLMNOPQRSTUVWXYZ.@"
+                    android:id="@+id/create_org_email_et"
+                    style="@style/create_org_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="组织邮箱"
+                    android:textColor="#ff000000"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView style="@style/create_org_error_tv"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_emailTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgcreate_org_email_et"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/org_new_create_org_hintcolor"
+                style="@style/create_org_relativelayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="身份证正面照"
+                    android:textColor="@color/new_create_org_hintcolor"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/create_org_owner_id_iv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    fresco:placeholderImage="@drawable/icon_org_add"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/econtact_id_img_urlTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/org_new_create_org_hintcolor"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/orgnew_create_org_hintcolor"
+                style="@style/create_org_relativelayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="组织登记证书"
+                    android:textColor="@color/new_create_org_hintcolor"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/create_org_cer_iv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    fresco:placeholderImage="@drawable/icon_org_add"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_certificate_img_urlTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgnew_create_org_hintcolor"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="@dimen/applayout_leftorright">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="组织简介"
+                android:textColor="@color/new_create_org_hintcolor"
+                android:textSize="@dimen/textSize_16"/>
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/create_org_orgdes_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_search_edt_bg"
+                    android:gravity="top|left"
+                    android:hint="请输入组织简介"
+                    android:textColor="#ff000000"
+                    android:minHeight="60dp"
+                    android:padding="5dp"
+                    android:textSize="@dimen/textSize_14"/>
+
+                <TextView
+                    android:id="@+id/create_count_editSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/create_org_orgdes_et"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:text="0/200"
+                    android:textColor="@color/new_create_org_hintcolor"
+                    android:textSize="@dimen/textSize_14"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_desTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgnew_create_org_hintcolor"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:textColor="#ff0000"
+                android:textSize="10sp"
+                android:visibility="invisible"/>
+        </LinearLayout>
+
+        <!--android:textColor="@color/new_create_org_hintcolor"-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/orgcreate_org_contact_name_et"
+                style="@style/create_org_relativelayout">
+
+                <EditText
+                    android:id="@+id/create_org_contact_name_et"
+                    style="@style/create_org_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="申请人姓名"
+                    android:textColor="#ff000000"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView style="@style/create_org_error_tv"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_contact_nameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgcreate_org_contact_name_et"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+        <!--android:textColor="@color/new_create_org_hintcolor"-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/orgcreate_org_contact_tel_et"
+                style="@style/create_org_relativelayout">
+
+                <EditText
+                    android:digits="0123456789"
+                    android:id="@+id/create_org_contact_tel_et"
+                    style="@style/create_org_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="申请人手机号"
+                    android:inputType="number"
+                    android:textColor="#ff000000"
+                    android:maxLength="11"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView style="@style/create_org_error_tv"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/eorg_contact_telTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgcreate_org_contact_tel_et"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/applayout_leftorright"
+                android:paddingRight="@dimen/applayout_leftorright"
+                android:textColor="#ffff0000"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/create_org_post_btn"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="@dimen/applayout_leftorright"
+            android:layout_marginRight="@dimen/applayout_leftorright"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/send_btn_bg"
+            android:text="创建组织"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+</ScrollView>

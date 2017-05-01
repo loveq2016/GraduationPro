@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:id="@+id/user_img"
+        android:src="@drawable/head_img"/>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="20sp"
+      android:textColor="#444"
+      android:text="王小小"
+      android:id="@+id/user_name"
+      android:layout_marginTop="36dp"
+      android:layout_toRightOf="@+id/user_img"
+      android:layout_marginLeft="16dp"
+     />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/user_img"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/line_horizontal_bg"/>
+
+</RelativeLayout>

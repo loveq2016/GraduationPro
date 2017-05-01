@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#ffccddff</color>
+    <color name="grey">#58616d</color>
+    <color name="darkgrey">#ff404040</color>
+    <color name="toasterro">#9fd524</color>
+    <color name="lightgrey">#ff888888</color>
+    <color name="semitransparent">#80000000</color>
+    <color name="lightransparent">#a0000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="navpage">#FFE1E8EB</color>
+    <color name="acttitle_bg">#3462FF</color>
+    <color name="acttitle2_bg">#000000</color>
+
+    <!-- new version -->
+    <color name="font_gray">#999999</color>
+    <color name="system_mask">#E8E8EE</color>
+    <color name="font_gray_new">#99bbbbbb</color>
+    <color name="live_list_back">#99eeeeee</color>
+
+    <color name="room_user_org_back">#55999999</color>
+
+</resources>

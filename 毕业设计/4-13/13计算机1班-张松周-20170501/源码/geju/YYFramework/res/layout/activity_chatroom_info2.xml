@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fffcfcfc"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <GridView
+                    android:id="@+id/yy_chatroom_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:columnWidth="90dp"
+                    android:listSelector="@color/transparent"
+                    android:numColumns="4"
+                    >
+                </GridView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/line_bg" />
+
+                <TextView
+                    android:id="@+id/yy_chatroom_all_member_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/userinfo_item_height"
+                    android:layout_marginLeft="@dimen/applayout_leftorright"
+                    android:background="#fffcfcfc"
+                    android:gravity="center_vertical"
+                    android:text="全部群成员"
+                    android:textColor="#ff333333"
+                    android:textSize="@dimen/textSize_18" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/line_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fffcfcfc"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/chat_room_name_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/userinfo_item_height"
+                        android:orientation="horizontal"
+                        android:paddingEnd="@dimen/applayout_leftorright"
+                        android:paddingLeft="@dimen/applayout_leftorright"
+                        android:paddingRight="@dimen/applayout_leftorright"
+                        android:paddingStart="@dimen/applayout_leftorright" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="群名称"
+                            android:textColor="#ff333333"
+                            android:textSize="@dimen/textSize_16" />
+
+                        <TextView
+                            android:id="@+id/yy_chatroom_name_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|right"
+                            android:text="名称"
+                            android:textColor="#ff333333"
+                            android:textSize="@dimen/textSize_16" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_bg" />
+
+                    <RelativeLayout
+                        android:id="@+id/yy_chatroom_ql_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/userinfo_item_height"
+                        android:paddingEnd="@dimen/applayout_leftorright"
+                        android:paddingLeft="@dimen/applayout_leftorright"
+                        android:paddingRight="@dimen/applayout_leftorright"
+                        android:paddingStart="@dimen/applayout_leftorright" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="群二维码"
+                            android:textColor="#ff333333"
+                            android:textSize="@dimen/textSize_16" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ql_code_icon_black"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ql_code_icon_black" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_bg" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/userinfo_item_height"
+                        android:orientation="horizontal"
+                        android:paddingEnd="@dimen/applayout_leftorright"
+                        android:paddingLeft="@dimen/applayout_leftorright"
+                        android:paddingRight="@dimen/applayout_leftorright"
+                        android:paddingStart="@dimen/applayout_leftorright" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="我的群昵称"
+                            android:textColor="#ff333333"
+                            android:textSize="@dimen/textSize_16" />
+
+                        <TextView
+                            android:id="@+id/yy_chatroom_nick_name_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|right"
+                            android:text="名称"
+                            android:textColor="#ff333333"
+                            android:textSize="@dimen/textSize_16" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_bg" />
+
+                    <Button
+                        android:id="@+id/yy_chatroom_exit_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/applayout_leftorright"
+                        android:layout_marginLeft="@dimen/applayout_leftorright"
+                        android:layout_marginRight="@dimen/applayout_leftorright"
+                        android:layout_marginStart="@dimen/applayout_leftorright"
+                        android:layout_marginTop="32dp"
+                        android:background="@drawable/shape_userinfo_btn"
+                        android:text=""
+                        android:textColor="#fffcfcfc"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="32dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
