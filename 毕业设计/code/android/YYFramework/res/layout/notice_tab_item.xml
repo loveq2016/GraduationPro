@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="#439DFF"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/notice_item_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0.5dp"
+        android:layout_marginTop="0.5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="text"
+        android:textColor="@drawable/selector_notice_tv"
+        android:textSize="18sp" />
+
+</LinearLayout>

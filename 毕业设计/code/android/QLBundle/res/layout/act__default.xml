@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titleBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/act__background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/leftLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical|left" >
+
+        <Button
+            android:id="@android:id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/act__back_bg" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/centerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="80dip"
+        android:layout_marginRight="80dip" >
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:lines="1"
+            android:singleLine="true"
+            android:text="title"
+            android:textColor="@color/act__default_color"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/centerIv"
+            android:layout_width="15dp"
+            android:layout_height="8dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@android:id/title"
+            android:src="@drawable/titledown_iv"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rightLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical|right" >
+
+        <Button
+            android:id="@android:id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/act__back_bg"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

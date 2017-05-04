@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/default_padding_top"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingTop="@dimen/default_padding_top">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公司信息"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16">
+        </TextView>
+
+        <EditText
+            android:id="@+id/content_edt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:text=""
+            android:textColor="@color/new_textView_dpm"
+            android:textSize="@dimen/textSize_16"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/item_line"
+        style="@style/line_style"
+        android:layout_marginLeft="@dimen/applayout_leftorright"/>
+
+</LinearLayout>

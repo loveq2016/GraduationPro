@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_height="48dp"
+        android:background="#fffcfcfc" >
+
+        <ImageView
+            android:id="@+id/form_listview_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/duration_icon" />
+
+        <TextView
+            android:id="@+id/formTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/form_listview_item_icon"
+            android:textColor="#ff777777"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/ty_open_duration_btn" />
+    </RelativeLayout>
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#ffeeeeee"
+        />
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#ffdddddd"
+        />
+    
+
+</LinearLayout>

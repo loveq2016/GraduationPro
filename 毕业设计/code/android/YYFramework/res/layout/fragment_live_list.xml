@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dddddd">
+
+    <!--android:layout_below="@+id/viewpager_hander"-->
+
+    <app.view.YYListView
+        android:layout_below="@+id/framelayout"
+        android:id="@+id/liveorglist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/transparent"/>
+
+    <LinearLayout
+        android:id="@+id/live_ll"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="60dp"
+        android:layout_width="60dp">
+        <ImageView
+            android:src="@drawable/icon_choice_tv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+    </LinearLayout>
+    <!--android:layout_below="@+id/viewpager_hander"-->
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_below="@+id/viewpager_hander"
+        android:id="@+id/air_ll"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <ImageView
+            android:src="@drawable/pic_no_live"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="哎哟，这里空空如也"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="暂无组织正在直播"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

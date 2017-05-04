@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingLeft="@dimen/applayout_leftorright" >
+
+        <LinearLayout
+            android:id="@+id/dpm_name_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_height" >
+
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/dpm_name_edt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_height"
+                android:background="@null"
+                android:hint="分组名称"
+                android:minWidth="50dp"
+                android:textColor="@color/new_textView_dpm"
+                android:textColorHint="@color/new_textView_dpm"
+                android:textSize="@dimen/textSize_16" />
+
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+
+        <RelativeLayout
+            android:id="@+id/dpm_admin_and_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_height"
+            android:paddingRight="@dimen/applayout_leftorright" >
+
+            <TextView
+                android:id="@+id/dpm_admin_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:hint="分组管理员"
+                android:textColor="@color/new_textView_dpm"
+                android:textColorHint="@color/new_textView_dpm"
+                android:textSize="@dimen/textSize_16" />
+
+            <ImageView
+                android:id="@+id/add_or_del_iv"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <View style="@style/line_style" />
+
+        <GridView
+            android:id="@+id/dpm_gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:columnWidth="90dp"
+            android:listSelector="@color/white"
+            android:numColumns="5" >
+        </GridView>
+
+        <!--android:layout_marginRight="@dimen/applayout_leftorright"-->
+        <Button
+            android:id="@+id/dpm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginBottom="45dp"
+
+            android:layout_marginTop="35dp"
+            android:background="@drawable/shape_join_org_btn_bg"
+            android:text="确定"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</ScrollView>

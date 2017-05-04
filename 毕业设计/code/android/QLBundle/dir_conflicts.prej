@@ -1,0 +1,9 @@
+Trying to change property 'svn:ignore'
+but the property has already been locally changed to a different value.
+.hg
+<<<<<<< (local property value)
+bin
+=======
+bin
+gen
+>>>>>>> (incoming property value)

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/org_shear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_share" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="分享协会"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/org_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_organization" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="组织信息"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/org_request_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_list" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="申请列表"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+
+        <View
+            android:id="@+id/org_point_view"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:background="@drawable/red_point"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/org_member_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_member_list" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="成员列表"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/org_add_dpm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_department" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="添加分组"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/org_add_member"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_member" />
+
+        <TextView
+            android:id="@+id/invite_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="邀请好友"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/org_find_member"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_groom" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="找  会  员"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+    </LinearLayout>
+
+</LinearLayout>

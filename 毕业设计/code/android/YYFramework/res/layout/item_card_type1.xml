@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="@dimen/applayout_leftorright" >
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="电话"
+            android:textColor="@color/new_textView_org"
+            android:textSize="@dimen/textSize_16" />
+
+        <ImageView
+            android:id="@+id/add_iv"
+            android:layout_width="@dimen/card_defails_addView_height"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_card_add" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/item_line"
+        style="@style/line_style"
+        android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+</LinearLayout>

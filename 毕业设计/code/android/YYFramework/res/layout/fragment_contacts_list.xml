@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fffcfcfc"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/contact_fragment_add_friends_tv"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableLeft="@drawable/contact_list_selected"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/contact_list_selected"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:text="添加好友"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffe7e7e7" />
+
+        <TextView
+            android:id="@+id/contact_fragment_my_chatrooms_tv"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableLeft="@drawable/my_msg"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/my_msg"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:text="我的群聊"
+            android:textColor="#ff333333" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffe7e7e7" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#E5E5E5" />
+
+    <app.view.YYListView
+        android:id="@+id/contacts_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffffff"
+        android:divider="#ffc6c6c6"
+        android:dividerHeight="1dip" />
+
+</LinearLayout>

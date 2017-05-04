@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/notify_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fffcfcfc"
+        android:orientation="vertical">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            layout="@layout/item_message_view_cell2"/>
+
+        <app.view.YYListView
+            android:id="@+id/message_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/line_bg"
+            android:dividerHeight="@dimen/line_height"
+            android:headerDividersEnabled="false">
+        </app.view.YYListView>
+    </LinearLayout>
+
+    <include layout="@layout/include_empty_view"/>
+
+</FrameLayout>

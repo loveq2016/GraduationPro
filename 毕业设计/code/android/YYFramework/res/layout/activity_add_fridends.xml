@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_add_friends_search" />
+
+    <!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fffcfcfc"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/add_friends_search_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.9"
+            android:background="@drawable/search_bg"
+            android:drawableLeft="@drawable/search_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/search_icon"
+            android:gravity="center_vertical"
+            android:hint="输入手机号码"
+            android:singleLine="true"
+            android:textColor="#ff000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/add_friends_search_btn"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.1"
+            android:background="@drawable/search_btn"
+            android:text="搜索"
+            android:textColor="#fffcfcfc" />
+
+        
+        <android.support.v7.widget.SearchView
+            android:id="@+id/add_friends_search_view"
+            android:layout_width="0px"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:iconifiedByDefault="false"
+            android:inputType="textFilter"
+            android:queryHint="输入手机号码" >
+            
+        </android.support.v7.widget.SearchView>
+       
+    </LinearLayout>
+    -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#ffc6c6c6"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/add_friends_scan_qr_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fffcfcfc"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableLeft="@drawable/scan_big"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ic_right_arrow"
+        android:drawableStart="@drawable/scan_big"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="扫一扫"
+        android:textColor="#ff000000"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffc6c6c6"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical"
+        android:paddingEnd="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingStart="10dp"
+        android:text="新的朋友"
+        android:textColor="#ff000000"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <app.view.YYListView
+        android:id="@+id/add_friends_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="#fffcfcfc"
+        android:divider="#ffc6c6c6"
+        android:dividerHeight="0.1dip" />
+
+</LinearLayout>

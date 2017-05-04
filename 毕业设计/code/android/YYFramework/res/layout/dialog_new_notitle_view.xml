@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/shape_imgpicker_content_bg"
+              android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/dialog_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:text="确定移除聊天室？"
+        android:textSize="@dimen/textSize_18"/>
+
+    <include layout="@layout/include_dialog_bottom_view"/>
+
+</LinearLayout>

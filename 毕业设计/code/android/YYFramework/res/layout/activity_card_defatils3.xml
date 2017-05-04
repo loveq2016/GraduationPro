@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="35dp" >
+
+        <ImageView
+            android:id="@+id/card_iv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:background="@color/system_mask" />
+
+        <LinearLayout style="@style/card_details_ll" >
+
+            <TextView
+                style="@style/card_details_left_textView"
+                android:text="姓名" />
+
+            <TextView
+                android:id="@+id/card_name_tv"
+                style="@style/card_details_right_textView"
+                android:text="aaaa\nsadasd" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <LinearLayout style="@style/card_details_ll" >
+
+            <TextView
+                style="@style/card_details_left_textView"
+                android:text="电话" />
+
+            <TextView
+                android:id="@+id/card_phone_tv"
+                style="@style/card_details_right_textView" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/applayout_leftorright" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="公司信息"
+                android:textColor="@color/new_textView_org"
+                android:textSize="@dimen/textSize_14" />
+
+            <TextView
+                android:id="@+id/card_company_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="公司信息"
+                android:textColor="@color/new_textView_dpm"
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <LinearLayout style="@style/card_details_ll" >
+
+            <TextView
+                style="@style/card_details_left_textView"
+                android:text="职位" />
+
+            <TextView
+                android:id="@+id/card_job_tv"
+                style="@style/card_details_right_textView" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <LinearLayout style="@style/card_details_ll" >
+
+            <TextView
+                style="@style/card_details_left_textView"
+                android:text="邮箱" />
+
+            <TextView
+                android:id="@+id/card_email_tv"
+                style="@style/card_details_right_textView" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <LinearLayout style="@style/card_details_ll" >
+
+            <TextView
+                style="@style/card_details_left_textView"
+                android:text="QQ" />
+
+            <TextView
+                android:id="@+id/card_qq_tv"
+                style="@style/card_details_right_textView" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/applayout_leftorright" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="备注"
+                android:textColor="@color/new_textView_org"
+                android:textSize="@dimen/textSize_14" />
+
+            <TextView
+                android:id="@+id/card_remask_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/new_textView_dpm"
+                android:textSize="@dimen/textSize_14" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/finish_frame"
+    android:background="@color/room_user_org_back">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            fresco:placeholderImage="@drawable/default_user_icon"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:roundAsCircle="true"
+            android:layout_gravity="center"
+            android:id="@+id/org_logo_eiv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tv_username1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dfasdf"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/live_org_name"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            style="@style/LiveEndTitleStyle"
+            android:text="dfad"/>
+        <TextView
+            android:visibility="gone"
+            style="@style/LiveEndTextStyle"
+            android:textColor="@color/white"
+            android:text="dfad"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/LiveEndTitleStyle"
+                    android:textColor="@color/white"
+                    android:text="直播时间"
+                    android:layout_marginTop="2dp"/>
+                <TextView
+                    android:id="@+id/tiem_long"
+                    style="@style/LiveEndTextStyle"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:text="asdfasd"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/like_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="100dp">
+                <TextView
+                    android:textColor="@color/white"
+                    style="@style/LiveEndTitleStyle"
+                    android:text="观看人数"
+                    android:layout_marginTop="2dp"/>
+                <TextView
+                    android:textColor="@color/white"
+                    android:id="@+id/watch_number"
+                    style="@style/LiveEndTextStyle"
+                    android:layout_marginTop="5dp"
+                    android:text="dfad"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/common_black_btn_bg"
+        android:layout_height="54dp"
+        android:layout_width="match_parent">
+        <Button
+            android:gravity="center"
+            android:id="@+id/live_close_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="确认"
+            android:textSize="18sp"
+            android:textColor="@color/common_white"
+            android:background="@drawable/common_black_btn_bg" />
+    </LinearLayout>
+
+</LinearLayout>

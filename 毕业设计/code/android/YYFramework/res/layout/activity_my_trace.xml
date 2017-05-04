@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp" >
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/tract_map_bg_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:id="@+id/tract_date_bg_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp" >
+            <TextView
+                android:id="@+id/tract_date_tv"
+                android:layout_width="75dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:drawablePadding="6dp"  
+                android:layout_marginLeft="10dp"             
+                android:gravity="center"
+                android:text="2016-08-01"
+                android:textColor="#ffffffff"
+                android:background="@drawable/date_text_back"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:src="@drawable/icon_map3x"/>
+
+    </RelativeLayout>
+    
+    <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="#ffffffff"
+       android:orientation="vertical">
+        
+        <TextView
+            android:layout_marginLeft="35dp"
+            android:id="@+id/signin_count_tv"
+            android:text="0"
+            android:textSize="20sp"
+            android:textColor="#38adff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:text="本月签到"
+            android:textSize="15sp"
+            android:textColor="#38adff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>       
+    </LinearLayout>
+    
+     <View
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_bg" />
+      
+    <org.ql.views.listview.QLXListView
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tract_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffffff"
+        android:divider="#E5E5E5"
+        android:dividerHeight="0.1dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false" />
+    
+</LinearLayout>

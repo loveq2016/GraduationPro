@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/system_mask"
+        android:orientation="vertical"
+        android:paddingBottom="35dp" >
+
+        <RelativeLayout style="@style/create_org_relativelayout" >
+
+            <EditText
+                android:id="@+id/create_org_orgname_et"
+                style="@style/create_org_edittext"
+                android:hint="组织名称" />
+
+            <TextView style="@style/create_org_error_tv" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <RelativeLayout style="@style/create_org_relativelayout" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="组织标志"
+                android:textColor="@color/new_create_org_hintcolor"
+                android:textSize="@dimen/textSize_16" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_org_add" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <RelativeLayout style="@style/create_org_relativelayout" >
+
+            <EditText
+                android:id="@+id/create_org_tel_et"
+                style="@style/create_org_edittext"
+                 android:inputType="number"
+                android:hint="组织电话" />
+
+            <TextView style="@style/create_org_error_tv" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <RelativeLayout style="@style/create_org_relativelayout" >
+
+            <EditText
+                android:id="@+id/create_org_addr_et"
+                style="@style/create_org_edittext"
+                android:hint="组织地址" />
+
+            <TextView style="@style/create_org_error_tv" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <RelativeLayout style="@style/create_org_relativelayout" >
+
+            <EditText
+                android:id="@+id/create_org_email_et"
+                style="@style/create_org_edittext"
+                android:hint="组织邮箱"
+                android:inputType="textEmailAddress" />
+
+            <TextView style="@style/create_org_error_tv" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <RelativeLayout style="@style/create_org_relativelayout" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="身份证正面照"
+                android:textColor="@color/new_create_org_hintcolor"
+                android:textSize="@dimen/textSize_16" />
+
+            <ImageView
+                android:id="@+id/create_org_owner_id_et"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_org_add" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <RelativeLayout style="@style/create_org_relativelayout" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="组织登记证书"
+                android:textColor="@color/new_create_org_hintcolor"
+                android:textSize="@dimen/textSize_16" />
+
+            <ImageView
+                android:id="@+id/create_org_cer_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_org_add" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="@dimen/applayout_leftorright" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="组织简介"
+                android:textColor="@color/new_create_org_hintcolor"
+                android:textSize="@dimen/textSize_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <EditText
+                    android:id="@+id/create_org_orgdes_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_search_edt_bg"
+                    android:gravity="top|left"
+                    android:hint="请输入组织简介"
+                    android:minHeight="50dp"
+                    android:padding="5dp"
+                    android:textSize="@dimen/textSize_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:text="0/200"
+                    android:textColor="@color/new_create_org_hintcolor"
+                    android:textSize="@dimen/textSize_14" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:textColor="#ff0000"
+                android:textSize="10sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <RelativeLayout
+            style="@style/create_org_relativelayout"
+            android:layout_marginTop="8dp" >
+
+            <EditText
+                android:id="@+id/create_org_contact_name_et"
+                style="@style/create_org_edittext"
+                android:hint="申请人姓名" />
+
+            <TextView style="@style/create_org_error_tv" />
+        </RelativeLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginLeft="@dimen/applayout_leftorright" />
+
+        <RelativeLayout
+            style="@style/create_org_relativelayout"
+            android:layout_marginTop="8dp" >
+
+            <EditText
+                android:id="@+id/create_org_contact_tel_et"
+                style="@style/create_org_edittext"
+                android:hint="申请人手机号"
+                android:inputType="number" />
+
+            <TextView style="@style/create_org_error_tv" />
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="@dimen/applayout_leftorright"
+            android:layout_marginRight="@dimen/applayout_leftorright"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/send_btn_bg"
+            android:text="创建组织"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</ScrollView>

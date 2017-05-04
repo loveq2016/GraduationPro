@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingTop="25dp" >
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logon_ll_bg"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+
+        <EditText
+            android:id="@+id/req_phoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/login_phone"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/login_phone"
+            android:hint="请输入手机号码"
+            android:textColorHint="@color/editview_hint" />
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_below="@id/req_phoneNum"
+            android:layout_margin="2dp"
+            android:background="@color/editview_hint" />
+
+        <EditText
+            android:id="@+id/req_checkNum"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/iv1"
+            android:background="@null"
+            android:drawableLeft="@drawable/logon_checknum"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/logon_checknum"
+            android:ems="10"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:textColor="#6AA8E3"
+            android:textColorHint="@color/editview_hint" >
+        </EditText>
+
+        <org.canson.view.VerificationButton.Verificationbutton
+            android:id="@+id/req_getcheckNum"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/req_checkNum"
+            android:layout_alignRight="@+id/req_checkNum"
+            android:background="@color/acttitle_bg"
+            android:text="获取验证码"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_below="@id/req_checkNum"
+            android:layout_margin="2dp"
+            android:background="@color/editview_hint" />
+
+        <EditText
+            android:id="@+id/req_loginpsw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/iv2"
+            android:background="@null"
+            android:drawableLeft="@drawable/login_password"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/login_password"
+            android:hint="请输入登录密码"
+            android:inputType="textPassword"
+            android:textColor="#6AA8E3"
+            android:textColorHint="@color/editview_hint" />
+
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_below="@id/req_loginpsw"
+            android:layout_margin="2dp"
+            android:background="@color/editview_hint" />
+
+        <EditText
+            android:id="@+id/req_checkpassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/iv3"
+            android:background="@null"
+            android:drawableLeft="@drawable/login_password"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/login_password"
+            android:hint="确认登录密码"
+            android:inputType="textPassword"
+            android:textColor="#6AA8E3"
+            android:textColorHint="@color/editview_hint" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/req_button"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/rl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/logon_btn"
+        android:text="注  册"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/req_button"
+        android:layout_below="@+id/req_button"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button"
+        android:button="@null"
+        android:checked="true" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkBox1"
+        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/checkBox1"
+        android:text="已阅读并将遵守"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/reg_userbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="组织服务条款"
+        android:textColor="@color/acttitle_bg" />
+
+    <include
+        android:id="@+id/loadingView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/loading_progress"
+        android:visibility="gone" />
+
+</RelativeLayout>

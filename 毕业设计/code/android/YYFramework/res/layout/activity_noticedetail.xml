@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingLeft="@dimen/applayout_leftorright"
+    android:paddingRight="@dimen/applayout_leftorright"
+    android:paddingTop="21dp" >
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_title"
+        android:layout_marginTop="16dp"
+        android:text="name"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/detail_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/detail_name"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/detail_name"
+        android:text=""
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/detail_context"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/detail_name"
+        android:layout_below="@id/detail_name"
+        android:layout_marginTop="21dp"
+        android:text=""
+        android:textSize="18sp" />
+
+</RelativeLayout>

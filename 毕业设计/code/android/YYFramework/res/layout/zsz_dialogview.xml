@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_zszdialog_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_zszdialogtextview_bg"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="修改"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/textSize_18" />
+
+    <EditText
+        android:id="@+id/dialog_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="28dp"
+        android:textSize="@dimen/textSize_18" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000000" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp" >
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#000000" />
+
+        <Button
+            android:id="@+id/enture_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/view"
+            android:background="@drawable/shape_zszdialogbutton_bg"
+            android:text="确认"
+            android:textColor="#2798FF"
+            android:textSize="@dimen/textSize_18" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/view"
+            android:background="@drawable/shape_zszdialogbutton_bg"
+            android:text="取消"
+            android:textSize="@dimen/textSize_18" />
+    </RelativeLayout>
+
+</LinearLayout>

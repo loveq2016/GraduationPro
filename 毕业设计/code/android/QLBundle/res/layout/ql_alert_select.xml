@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<view class="org.ql.app.alert.AlertController$RecycleListView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/select_dialog_listview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="5dip"
+    android:paddingTop="5dip"
+    android:cacheColorHint="@null"
+    android:background="@null"
+    android:divider="@drawable/ql_alert_dialog_divider"
+    android:listSelector="@drawable/ql_alert_listview_selected"
+    android:scrollbars="vertical" />

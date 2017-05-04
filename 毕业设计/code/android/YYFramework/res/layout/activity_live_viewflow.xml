@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/banner1"
+        android:layout_height="150dip">
+
+        <org.taptwo.android.widget.ViewFlow
+            android:id="@+id/viewflow"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="21dip"
+            android:layout_gravity="bottom"
+            android:background="@null"
+            android:gravity="center"
+            android:paddingLeft="@dimen/padding_small"
+            android:paddingRight="@dimen/padding_small" >
+            <org.taptwo.android.widget.CircleFlowIndicator
+                android:background="@null"
+                android:id="@+id/viewflowindic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_small"
+                app:activeColor="#C13D0D"
+                app:activeType="fill"
+                app:circleSeparation="12dip"
+                app:inactiveColor="#ffcfceb8"
+                app:inactiveType="fill"
+                app:vf_radius="3dip" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
+

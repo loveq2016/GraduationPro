@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center">
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin" >
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/sharp_camera_radius_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_change_camera"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#8e8e8e"
+                    android:textSize="18sp"
+                    android:text="点击设置封面"/>
+            </LinearLayout>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/live_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                fresco:roundedCornerRadius="10dp"
+                fresco:placeholderImageScaleType="fitXY"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/live_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:layout_toRightOf="@id/iv04"
+            android:hint="请输入直播标题" />
+
+        <View
+            style="@style/line_style"
+            android:layout_alignParentBottom="true" />
+        <Button
+            android:id="@+id/start_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_btn_height"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/shape_default_btn"
+            android:text="开始直播"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_14" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_btn_height"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_gary_btn"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_14" />
+    </LinearLayout>
+</LinearLayout>

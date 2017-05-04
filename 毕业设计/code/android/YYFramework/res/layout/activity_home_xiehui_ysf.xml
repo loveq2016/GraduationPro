@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffcfcfc"
+    android:orientation="vertical">
+
+    <app.view.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/viewpager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"/>-->
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="@drawable/bottom_bar"
+        android:layout_marginBottom="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="3dp"
+            android:id="@+id/checkin_tab_tv"
+            android:drawableTop="@drawable/bottom_sign_s"
+            android:text=""
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_marginTop="3dp"
+            android:id="@+id/footprint_tab_tv"
+            android:drawableTop="@drawable/bottom_footprint_s"
+            android:text=""
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/system_mask"
+              android:orientation="vertical">
+
+    <include layout="@layout/include_search_view2"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="5dp">
+
+        <app.view.YYListView
+            android:id="@+id/chatroom_list_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:divider="@color/line_bg"
+            android:dividerHeight="@dimen/line_height"
+            android:headerDividersEnabled="false"/>
+
+        <LinearLayout
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_layout_empty_view"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="您还没有加入任何群聊"
+                android:textSize="@dimen/textSize_14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赶紧去找个群聊加入吧"
+                android:textSize="@dimen/textSize_14"/>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

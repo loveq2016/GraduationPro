@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/default_padding_top"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/default_padding_top" >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_head_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        fresco:placeholderImage="@drawable/default_user_icon"
+        fresco:roundedCornerRadius="10dp"/>
+
+    <TextView
+        android:id="@+id/item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/item_head_iv"
+        android:text="name"
+        android:textColor="@color/new_textView_color"
+        android:textSize="@dimen/textSize_16" />
+
+    <TextView
+        android:id="@+id/item_status_tv"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_join_org_btn_bg"
+        android:gravity="center"
+        android:text="申请"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_14" />
+
+</RelativeLayout>

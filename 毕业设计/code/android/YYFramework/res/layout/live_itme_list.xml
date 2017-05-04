@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#dddddd"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/live_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/white">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/org_log"
+                fresco:placeholderImage="@drawable/default_user_icon"
+                android:layout_width="match_parent"
+                android:layout_height="183dp"
+                fresco:placeholderImageScaleType="centerCrop"/>
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_alignBottom="@+id/org_log"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:background="@drawable/code_butt_back"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/anchor_name_tv"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:lines="1"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_width="match_parent"/>-->
+            <!--</LinearLayout>-->
+
+
+            <LinearLayout
+                android:background="@drawable/code_butt_back"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_state1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/live_state_ing"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/live_state1"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/new_line_bg"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/live_title"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="#282828"
+                    android:ellipsize="end"
+                    android:textSize="12sp"
+                    android:lines="1"
+                    android:maxLength="8"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:id="@+id/anchor_name_tv"
+                    android:text=""
+                    android:textColor="#282828"
+                    android:ellipsize="end"
+                    android:textSize="12sp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:lines="1"
+                    android:maxLength="4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/org_logo"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    fresco:roundAsCircle ="true"/>
+                <TextView
+                    android:id="@+id/org_name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:text=""
+                    android:textColor="#282828"
+                    android:ellipsize="end"
+                    android:textSize="12sp"
+                    android:lines="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="3dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/live_layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/org_log2"
+                fresco:placeholderImage="@drawable/default_user_icon"
+                android:layout_width="match_parent"
+                android:layout_height="183dp"
+                fresco:placeholderImageScaleType="centerCrop" />
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_alignBottom="@+id/org_log2"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:background="@drawable/code_butt_back"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/anchor_name_tv2"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:lines="1"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_width="match_parent"/>-->
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:background="@drawable/code_butt_back"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_state2"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/live_state_ing"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/live_state2"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="" />
+
+            </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/new_line_bg"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/live_title2"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:text=""
+                        android:textColor="#282828"
+                        android:ellipsize="end"
+                        android:textSize="12sp"
+                        android:maxLength="8"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                    <TextView
+                        android:id="@+id/anchor_name_tv2"
+                        android:text=""
+                        android:textColor="#282828"
+                        android:ellipsize="end"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:maxLength="4"
+                        android:lines="1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/org_logo2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        fresco:roundAsCircle ="true"
+                        />
+                    <TextView
+                        android:id="@+id/org_name2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:text=""
+                        android:textColor="#282828"
+                        android:ellipsize="end"
+                        android:textSize="12sp"
+                        android:lines="1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

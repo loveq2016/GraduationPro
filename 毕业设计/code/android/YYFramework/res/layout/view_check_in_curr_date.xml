@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@null"
+    >
+    
+    <TextView 
+        android:id="@+id/checkin_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期一 2016.07.01"
+        android:textColor="#ff888888"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/checkin_date"
+        android:drawableStart="@drawable/checkin_date"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        
+        />
+    
+    <TextView 
+        android:id="@+id/checkin_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前时间:00:00"
+        android:textColor="#ff888888"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/checkin_time"
+        android:drawableStart="@drawable/checkin_time"
+        android:drawablePadding="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        
+        />
+    
+
+</RelativeLayout>

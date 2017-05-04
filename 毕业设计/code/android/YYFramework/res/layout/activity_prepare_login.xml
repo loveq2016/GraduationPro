@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/prepare_login_bg"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/login_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_wechat_login"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="微信登录"/>
+        <TextView
+            android:id="@+id/login_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_phone_login"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="手机登录"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/login_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text="@string/app_role"/>
+</LinearLayout>

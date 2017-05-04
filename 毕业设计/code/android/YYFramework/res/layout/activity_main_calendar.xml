@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <!--<View-->
+		<!--style="@style/line_style"/>-->
+
+    <!--<ScrollView-->
+        <!--android:scrollbars="none"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_height="0dp">-->
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+	        <!--<com.prolificinteractive.materialcalendarview.MaterialCalendarView-->
+			    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+			    <!--android:id="@+id/calendarView"-->
+			    <!--android:background="@drawable/bg_day"-->
+			    <!--android:layout_width="match_parent"-->
+			    <!--android:layout_height="wrap_content"-->
+			    <!--android:paddingBottom="8dp"-->
+			    <!--android:paddingEnd="@dimen/applayout_leftorright"-->
+			    <!--android:paddingLeft="@dimen/applayout_leftorright"-->
+			    <!--android:paddingRight="@dimen/applayout_leftorright"-->
+			    <!--android:paddingStart="@dimen/applayout_leftorright"-->
+			    <!--android:paddingTop="8dp"        -->
+			    <!--app:mcv_selectionColor="#55999999"-->
+			    <!--app:mcv_showOtherDates="none"/>-->
+			<!--<include layout="@layout/claendar_text_back"/>-->
+			<!--&lt;!&ndash;<include layout="@layout/claendar_yylistview_back"/>&ndash;&gt;-->
+		    <!--<app.view.YYListView-->
+		        <!--android:scrollbars="none"-->
+		        <!--android:id="@+id/calendar_list_view"-->
+		        <!--android:layout_width="match_parent"-->
+		        <!--android:layout_height="0dp"-->
+				<!--android:layout_weight="1"-->
+		        <!--android:divider="#55999999"-->
+		        <!--android:dividerHeight="1dp"-->
+		        <!--android:footerDividersEnabled="false"/>-->
+		<!--</LinearLayout>-->
+    <!--</ScrollView>-->
+	<LinearLayout
+		android:layout_marginTop="-1dp"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:layout_width="match_parent">
+		<app.view.YYListView
+			android:scrollbars="none"
+			android:id="@+id/calendar_list_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:divider="#55999999"
+			android:dividerHeight="1dp"
+			android:footerDividersEnabled="false"
+			android:overScrollMode="never"
+			android:fadingEdge="none"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="5dp"
+		android:layout_marginTop="5dp"
+		android:gravity="center"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<ImageButton
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/add_btn"
+			android:layout_width="35dp"
+			android:layout_height="35dp"
+			android:background="#00000000"
+			android:scaleType="centerCrop"
+			android:src="@drawable/btn_add_day2" />
+	</LinearLayout>
+</LinearLayout>
+

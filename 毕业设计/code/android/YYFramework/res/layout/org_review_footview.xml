@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:id="@+id/footview_btn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/applayout_leftorright"
+        android:layout_marginRight="@dimen/applayout_leftorright"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/send_btn_bg"
+        android:text="加入组织"
+        android:textColor="#ffffffff"
+        android:textSize="16sp"
+        />
+
+</LinearLayout>

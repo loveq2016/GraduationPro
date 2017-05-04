@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/whiterounded_half_bg" >
+
+    <LinearLayout
+        android:id="@+id/qcode_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/whiterounded_half_bg"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingStart="@dimen/applayout_leftorright" >
+
+            <app.logic.live.view.RoundAngleSimpleDraweeView
+                fresco:placeholderImage="@drawable/default_user_icon"
+                fresco:placeholderImageScaleType="centerCrop"
+                android:id="@+id/im_personpic"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_user_icon"
+                android:visibility="visible"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@id/im_personpic"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tx_name"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tx_phone"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/tx_name"
+                    android:visibility="gone"
+                    android:text="格局号："
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/qrcode"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="fitXY" />
+
+    </LinearLayout>
+
+</RelativeLayout>

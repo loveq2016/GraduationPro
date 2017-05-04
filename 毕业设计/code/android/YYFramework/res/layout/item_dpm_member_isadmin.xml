@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+    <View
+        android:id="@+id/item_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/applayout_leftorright"
+        android:background="@color/new_line_bg"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_padding_top"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingTop="@dimen/default_padding_top" >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/item_head_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="centerCrop"
+                fresco:roundedCornerRadius="10dp"
+                fresco:placeholderImage="@drawable/default_user_icon"/>
+
+            <TextView
+                android:id="@+id/item_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="name"
+                android:textColor="@color/new_textView_color"
+                android:textSize="@dimen/textSize_14" />
+
+            <ImageView
+                android:id="@+id/item_show_admin_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/icon_admin" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:id="@+id/builder_edit_iv"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/footview_dpmmenber_edit_bg"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/line_bg" />
+
+</LinearLayout>

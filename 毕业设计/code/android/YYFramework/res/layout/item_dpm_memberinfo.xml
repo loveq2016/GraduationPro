@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="@dimen/applayout_leftorright"
+        android:layout_marginRight="@dimen/applayout_leftorright"
+        android:layout_marginStart="@dimen/applayout_leftorright"
+        android:layout_marginTop="8dp" >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/dpm_memberinfo_header_iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            fresco:roundedCornerRadius="10dp"
+            fresco:placeholderImage="@drawable/default_user_icon" />
+
+        <TextView
+            android:id="@+id/dpm_memberinfo_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@id/dpm_memberinfo_header_iv"
+            android:text="name"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_18" />
+
+        <TextView
+            android:id="@+id/dpm_memberinfo_duty_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@id/footView_header_iv"
+            android:text="负责人"
+            android:textSize="@dimen/textSize_18"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/item_admin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_admin"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_12"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+</LinearLayout>

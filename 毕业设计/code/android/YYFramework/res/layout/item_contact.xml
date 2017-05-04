@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/catalog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:background="@color/line_bg"
+        android:paddingBottom="5dip"
+        android:paddingLeft="16dip"
+        android:paddingTop="5dip"
+        android:text="A"
+        android:textSize="12sp"
+        android:textColor="#454545" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/default_padding_top"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright"
+        android:paddingTop="@dimen/default_padding_top" >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/conract_item_imgview"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            fresco:roundedCornerRadius="10dp"
+            fresco:placeholderImage="@drawable/default_user_icon"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/conract_item_imgview"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name_item_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textColor="@color/new_textView_org"
+                android:textSize="@dimen/textSize_16" />
+            <TextView
+                android:id="@+id/geju_item_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="name"
+                android:textColor="#ffc6c6c6"
+                android:textSize="@dimen/textSize_16" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/geju_status_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="#ffc6c6c6"
+                android:textSize="@dimen/textSize_16" />
+            <Button
+                android:id="@+id/add_friend_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/btn_add_friends_selector"
+                android:focusable="false"
+                android:text="添加"
+                android:textColor="#fffcfcfc"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

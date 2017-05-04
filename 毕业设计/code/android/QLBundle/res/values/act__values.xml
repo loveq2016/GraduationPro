@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<color name="act__default_color">#FFFFFFFF</color>
+
+	<style name="act__windowTitleBackgroundStyle">
+		<item name="android:background">@null</item>
+	</style>
+
+	<style name="act__theme" parent="android:Theme">
+	    <item name="android:windowTitleBackgroundStyle">@style/act__windowTitleBackgroundStyle</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowTitleSize">46.6dip</item>
+	</style>
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/delete_card_ll"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingBottom="25dp"
+              android:paddingLeft="@dimen/applayout_leftorright"
+              android:paddingRight="@dimen/applayout_leftorright"
+              android:paddingTop="25dp">
+
+    <Button
+        android:id="@+id/del_card_btn"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/shape_card_details_btn"
+        android:text="删除名片"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_14"/>
+
+</LinearLayout>

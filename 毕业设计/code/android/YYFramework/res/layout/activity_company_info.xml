@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f0f6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/text_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:gravity="top"
+            android:hint="请输入简介"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:textColorHint="#FFC2C2C2" />
+        <TextView
+            android:id="@+id/create_count_editSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="right"
+            android:padding="5dp"
+            android:text="0/256"
+            android:textColor="@color/new_create_org_hintcolor"
+            android:textSize="@dimen/textSize_14"/>
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

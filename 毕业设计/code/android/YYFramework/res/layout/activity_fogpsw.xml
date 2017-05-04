@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f0ee" >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="top"
+        android:padding="8dp"
+        android:text="找回密码"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="220dp"
+        android:layout_below="@+id/header"
+        android:layout_margin="10dp"
+        android:background="@drawable/whiterounded_half_bg"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <EditText
+                android:id="@+id/forgetpw_phoneNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="#ffffff"
+                android:hint="手机号码"
+                android:inputType="phone"
+                android:paddingTop="8dp"
+                android:textColor="#000000"
+                android:textCursorDrawable="@null" />
+
+            <!--
+                  <org.canson.view.VerificationButton.Verificationbutton
+                android:id="@+id/req_getcheckNum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:background="@drawable/send"
+                android:layout_gravity="center_vertical"
+                />
+            -->
+            <!--
+                <org.canson.view.VerificationButton.Verificationbutton
+                android:id="@+id/req_getcheckNum1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/getcheckcode"
+                android:scaleType="fitXY"
+                android:text="获取验证码"
+                android:textColor="#32B8ED"
+                android:textSize="16sp" />
+            -->
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#f2f2f2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/forgetpw_yzm"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="#ffffff"
+                android:hint="验证码"
+                android:inputType="phone"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textCursorDrawable="@null" />
+
+            <org.canson.view.VerificationButton.Verificationbutton
+                android:id="@+id/req_getcheckNum1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/getcheckcode"
+                android:scaleType="fitXY"
+                android:text="获取验证码"
+                android:textColor="#32B8ED"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#f2f2f2" />
+
+        <EditText
+            android:id="@+id/forgetpw_newpsw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="#ffffff"
+            android:hint="新密码"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:textCursorDrawable="@null" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#f2f2f2" />
+
+        <EditText
+            android:id="@+id/forgetpw_ensure"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="#ffffff"
+            android:hint="再次输入密码"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:textCursorDrawable="@null" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/forgetpw_next"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/button_blue_selector"
+        android:text="确定"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <include
+        android:id="@+id/loadingView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/loading_progress"
+        android:visibility="gone" />
+
+</RelativeLayout>

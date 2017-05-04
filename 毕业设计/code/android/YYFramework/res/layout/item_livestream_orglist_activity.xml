@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@color/transparent">
+
+    <ImageView
+        android:id="@+id/item_livestream_iv"
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#90A1A1A1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/item_livestream_org_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="广东跨境电商"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_14"/>
+
+        <TextView
+            android:id="@+id/item_livestream_nickname_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="广东跨境电商"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_14"/>
+    </LinearLayout>
+</RelativeLayout>

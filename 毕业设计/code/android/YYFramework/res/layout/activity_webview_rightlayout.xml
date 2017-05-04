@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingRight="10dp">
+
+    <ImageButton
+        android:id="@+id/webview_refresh"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/icon_webview_refresh" />
+
+        <ImageButton
+            android:id="@+id/webview_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/icon_webview_close" />
+
+</LinearLayout>
+

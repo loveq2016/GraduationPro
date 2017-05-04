@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_imgpicker_content_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/dialog_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:text="确定删除该日程吗？"
+        android:textColor="#FF000000"
+        android:textSize="18sp"/>
+
+    <View
+        style="@style/line_style"
+        android:layout_marginTop="@dimen/textSize_16"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <View
+            android:id="@+id/centerIv"
+            android:layout_centerInParent="true"
+            style="@style/line_style_vertical" />
+
+        <Button
+            android:id="@+id/dialog_true_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/centerIv"
+            android:background="@color/transparent"
+            android:text="删除"
+            android:textColor="#ff0000"
+            android:textSize="@dimen/textSize_16"/>
+
+        <Button
+            android:id="@+id/dialog_cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/centerIv"
+            android:background="@color/transparent"
+            android:text="取消"
+            android:textColor="@color/new_app_color"
+            android:textSize="@dimen/textSize_16"/>
+
+    </RelativeLayout>
+</LinearLayout>

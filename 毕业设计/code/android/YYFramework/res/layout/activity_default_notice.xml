@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <include layout="@layout/include_title_layout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp">
+
+            <TextView
+                android:id="@+id/notice_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_18" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_gravity="center"
+                    android:id="@+id/org_image"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    fresco:roundAsCircle ="true"
+                    fresco:placeholderImage="@drawable/default_user_icon"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/notice_maker_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="@dimen/textSize_14" />
+
+                <TextView
+                    android:id="@+id/noitce_createTime_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:textSize="@dimen/textSize_15" />
+            </LinearLayout>
+
+
+
+            <View
+                android:id="@+id/lin_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#55999999" />
+
+
+            <GridView
+                android:id="@+id/noitce_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3" />
+
+            <TextView
+                android:id="@+id/notice_content_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_14" />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp">
+        <TextView
+            android:id="@+id/good_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="70dp"
+            android:textSize="@dimen/textSize_14"
+            android:textColor="#a2a2a2"
+            android:text="0"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/icon_hand_s"
+            android:drawablePadding="5dp"/>
+        <TextView
+            android:id="@+id/add_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="70dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/textSize_14"
+            android:textColor="#a2a2a2"
+            android:text="已参与"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/icon_star_s"
+            android:drawablePadding="5dp"/>
+        <TextView
+            android:id="@+id/report_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize_14"
+            android:textColor="#a2a2a2"
+            android:text="举报"
+            android:padding="5dp"/>
+    </LinearLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

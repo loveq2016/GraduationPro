@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:padding="5dp"
+    android:minHeight="60dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_gravity="center"
+        android:id="@+id/msg_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        fresco:placeholderImage="@drawable/item_notice_default"
+        fresco:roundedCornerRadius="10dp"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/msg_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:maxLines="2"
+            android:text="title"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_gravity="right"
+                android:text="aaaaa"
+                android:id="@+id/msg_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:paddingRight="5dp"
+                android:textSize="16sp"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_gravity="center"
+                android:id="@+id/org_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="6dp"
+                fresco:roundAsCircle ="true"
+                fresco:placeholderImage="@drawable/default_user_icon"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:text="adsfad"
+                android:id="@+id/msg_user"
+                android:layout_width="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/new_textView_color"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="#FFFFFF"-->
+                <!--android:minHeight="60dp">-->
+
+    <!--<app.logic.live.view.RoundAngleImageView-->
+        <!--android:padding="5dp"-->
+        <!--android:id="@+id/msg_iv"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:src="@drawable/item_notice_default"-->
+        <!--android:scaleType="centerCrop" />-->
+
+    <!--&lt;!&ndash;<app.logic.live.view.RoundAngleImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/msg_iv"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:padding="5dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:src="@drawable/item_notice_default"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:scaleType="centerCrop" />&ndash;&gt;-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/msg_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="6dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_toRightOf="@id/msg_iv"-->
+        <!--android:maxLines="2"-->
+        <!--android:text="title"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="18sp"/>-->
+
+    <!--<TextView-->
+        <!--android:text="adsfad"-->
+        <!--android:id="@+id/msg_user"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/msg_title"-->
+        <!--android:layout_marginLeft="6dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_toRightOf="@id/msg_iv"-->
+        <!--android:textColor="@color/new_textView_color"-->
+        <!--android:textSize="16sp"/>-->
+
+    <!--<TextView-->
+        <!--android:text="aaaaa"-->
+        <!--android:id="@+id/msg_time"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBaseline="@id/msg_user"-->
+        <!--android:layout_alignBottom="@id/msg_user"-->
+        <!--android:layout_alignRight="@id/msg_title"-->
+        <!--android:layout_marginRight="22dp"-->
+        <!--android:textSize="16sp"/>-->
+
+<!--</RelativeLayout>-->

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="city">
+        <item>广州</item>
+        <item>佛山</item>
+        <item>深圳</item>
+        <item>东莞</item>
+        <item>惠州</item>
+        <item>河源</item>
+        <item>江门</item>
+        <item>阳江</item>
+        <item>茂名</item>
+        <item>湛江</item>
+        <item>云浮</item>
+        <item>肇庆</item>
+        <item>清远</item>
+        <item>韶关</item>
+        <item>梅州</item>
+        <item>揭阳</item>
+        <item>汕头</item>
+        <item>汕尾</item>
+    </string-array>
+    <string-array name="week">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+    <string-array name="shareWay">
+        <item>新浪微博</item>
+        <item>微信</item>
+    </string-array>
+    <string-array name="shareFriendsWay">
+        <item>新浪微博</item>
+        <item>微信</item>
+        <item>短信</item>
+    </string-array>
+    <string-array name="flash_icons">
+        <item>drawable/flash_off</item>
+        <item>drawable/flash_auto</item>
+        <item>drawable/flash_on</item>
+        <item>drawable/flash_torch</item>
+        <item>drawable/flash_red_eye</item>
+    </string-array>
+    <string-array name="flash_entries">
+        <item>禁用闪光灯</item>
+        <item>自动闪光灯</item>
+        <item>打开闪光灯</item>
+        <item>总是打开</item>
+        <item>红眼检测</item>
+    </string-array>
+    <string-array name="flash_values">
+        <item>flash_off</item>
+        <item>flash_auto</item>
+        <item>flash_on</item>
+        <item>flash_torch</item>
+        <item>flash_red_eye</item>
+    </string-array>
+    <string-array name="focus_mode_icons">
+        <item>drawable/focus_mode_auto</item>
+        <item>drawable/focus_mode_infinity</item>
+        <item>drawable/focus_mode_macro</item>
+        <item>drawable/focus_mode_fixed</item>
+        <item>drawable/focus_mode_edof</item>
+        <item>drawable/focus_mode_continuous_video</item>
+    </string-array>
+    <string-array name="focus_mode_entries">
+        <item>自动</item>
+        <item>远距</item>
+        <item>微距</item>
+        <item>定焦</item>
+        <item>EDOF</item>
+        <item>持续对焦</item>
+    </string-array>
+    <string-array name="focus_mode_values">
+        <item>focus_mode_auto</item>
+        <item>focus_mode_infinity</item>
+        <item>focus_mode_macro</item>
+        <item>focus_mode_fixed</item>
+        <item>focus_mode_edof</item>
+        <item>focus_mode_continuous_video</item>
+    </string-array>
+    <string-array name="preference_timer_entries">
+        <item>无</item>
+        <item>1秒</item>
+        <item>2秒</item>
+        <item>5秒</item>
+        <item>10秒</item>
+        <item>15秒</item>
+        <item>20秒</item>
+        <item>30秒</item>
+        <item>60秒</item>
+        <item>2分钟</item>
+        <item>5分钟</item>
+    </string-array>
+    <string-array name="preference_timer_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>300</item>
+    </string-array>
+    <string-array name="preference_burst_mode_entries">
+        <item>关闭</item>
+        <item>2x</item>
+        <item>3x</item>
+        <item>4x</item>
+        <item>5x</item>
+        <item>10x</item>
+    </string-array>
+    <string-array name="preference_burst_mode_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="preference_burst_interval_entries">
+        <item>无</item>
+        <item>1秒</item>
+        <item>2秒</item>
+        <item>5秒</item>
+        <item>10秒</item>
+        <item>15秒</item>
+        <item>20秒</item>
+        <item>30秒</item>
+        <item>60秒</item>
+        <item>2分钟</item>
+        <item>5分钟</item>
+    </string-array>
+    <string-array name="preference_burst_interval_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>300</item>
+    </string-array>
+    <string-array name="preference_preview_size_entries">
+        <item>增大预览尺寸</item>
+        <item>适配照片大小(WYSIWYG)</item>
+    </string-array>
+    <string-array name="preference_preview_size_values">
+        <item>preference_preview_size_display</item>
+        <item>preference_preview_size_wysiwyg</item>
+    </string-array>
+    <string-array name="preference_volume_keys_entries">
+        <item>拍照</item>
+        <item>调焦</item>
+        <item>曝光</item>
+        <item>音量</item>
+    </string-array>
+    <string-array name="preference_volume_keys_values">
+        <item>volume_take_photo</item>
+        <item>volume_zoom</item>
+        <item>volume_exposure</item>
+        <item>volume_nothing</item>
+    </string-array>
+    <string-array name="preference_ui_placement_entries">
+        <item>左手用户界面</item>
+        <item>右手用户界面</item>
+    </string-array>
+    <string-array name="preference_ui_placement_values">
+        <item>ui_left</item>
+        <item>ui_right</item>
+    </string-array>
+    <string-array name="preference_grid_entries">
+        <item>无</item>
+        <item>显示 3x3 网格</item>
+        <item>显示 4x2 网格</item>
+    </string-array>
+    <string-array name="preference_grid_values">
+        <item>preference_grid_none</item>
+        <item>preference_grid_3x3</item>
+        <item>preference_grid_4x2</item>
+    </string-array>
+    <string-array name="preference_record_audio_src_entries">
+        <item>设备自带</item>
+        <item>外置麦克风 (如果可用的话)</item>
+    </string-array>
+    <string-array name="preference_record_audio_src_values">
+        <item>audio_src_camcorder</item>
+        <item>audio_src_mic</item>
+    </string-array>
+    <!--
+    <string-array name="shiFengZhuanYe">
+	    <item></item>
+	</string-array>
+    -->
+    <string-array name="date">
+        <item>阿妹</item>
+        <item>阿郎</item>
+        <item>陈奕迅</item>
+        <item>周杰伦</item>
+        <item>曾一鸣</item>
+        <item>成龙</item>
+        <item>王力宏</item>
+        <item>汪峰</item>
+        <item>王菲</item>
+        <item>那英</item>
+        <item>张伟</item>
+        <item>张学友</item>
+        <item>李德华</item>
+        <item>郑源</item>
+        <item>白水水</item>
+        <item>白天不亮</item>
+        <item>陈龙</item>
+        <item>陈丽丽</item>
+        <item>哈林</item>
+        <item>高进</item>
+        <item>高雷</item>
+        <item>阮今天</item>
+        <item>龚琳娜</item>
+        <item>#蔡依林</item>
+        <item>$797835344$</item>
+        <item>Jack</item>
+        <item>~夏先生</item>
+    </string-array>
+
+</resources>

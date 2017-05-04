@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@drawable/shape_item_card_llbg" >
+
+    <TextView
+        android:id="@+id/titleorg_id"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="组织ID"
+        android:textColor="#787878"
+        android:textSize="@dimen/textSize_18" />
+
+    <TextView
+        android:id="@+id/title_org_unread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/titleorg_id"
+        android:background="@drawable/unread_count_bg"
+        android:gravity="center"
+        android:lines="1"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp" />
+
+</RelativeLayout>

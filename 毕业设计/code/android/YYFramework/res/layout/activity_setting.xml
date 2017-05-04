@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_settingactivity_bg"
+    android:orientation="vertical">
+    <View
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:id="@+id/setting_about_me"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:id="@+id/imageView01"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_about_us" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imageView01"
+            android:text="关于我们"
+            android:textColor="@color/new_textView_color"
+            android:textSize="@dimen/textSize_14" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ty_open_duration_btn" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:id="@+id/setting_app_updata"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:id="@+id/imageView02"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_updata" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imageView02"
+            android:text="版本更新"
+            android:textColor="@color/new_textView_color"
+            android:textSize="@dimen/textSize_14" />
+
+        <ImageView
+            android:id="@+id/setting_updataIv"
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ty_open_duration_btn" />
+
+        <ImageView
+            android:id="@+id/app_updataStatusIv"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/setting_updataIv"
+            android:src="@drawable/unread_count_bg"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/app_codeName_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/app_updataStatusIv"
+            android:text=""
+            android:textSize="@dimen/textSize_16" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:id="@+id/setting_help_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:paddingEnd="@dimen/applayout_leftorright"
+        android:paddingRight="@dimen/applayout_leftorright" >
+
+        <ImageView
+            android:id="@+id/imageView03"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_feedback" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imageView03"
+            android:text="帮助与反馈"
+            android:textColor="@color/new_textView_color"
+            android:textSize="@dimen/textSize_14" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ty_open_duration_btn" />
+    </RelativeLayout>
+
+</LinearLayout>

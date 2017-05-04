@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_search_view2" />
+
+    <org.ql.views.listview.QLXListView
+        android:layout_below="@+id/search_bg"
+        android:id="@+id/friends_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/listView_divider_bg"
+        android:dividerHeight="@dimen/listView_divider_height"
+        android:headerDividersEnabled="false" >
+    </org.ql.views.listview.QLXListView>
+
+    <LinearLayout
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_layout_empty_view" />
+        <TextView
+            android:id="@+id/empty_tv01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="没有成员可添加"
+            android:textSize="@dimen/textSize_14" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

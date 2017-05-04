@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:maxLines="3"
+            android:id="@+id/title_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:background="@color/transparent"
+            android:hint="公告标题"
+            android:textColorHint="#FFC2C2C2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="16dp"
+            android:background="@color/line_bg" />
+
+        <EditText
+            android:id="@+id/text_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/transparent"
+            android:gravity="top"
+            android:hint="公告内容"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:textColorHint="#FFC2C2C2" />
+
+        <GridView
+            android:id="@+id/grid_view_image_pick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="4" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

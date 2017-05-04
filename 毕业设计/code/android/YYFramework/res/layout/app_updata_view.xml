@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_imgpicker_content_bg"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:text="版本更新"
+        android:id="@+id/dialog_title_tv"
+        style="@style/dialog_title_tv"/>
+
+    <View style="@style/line_style"/>
+
+    <TextView
+        android:text=""
+        android:id="@+id/dialog_tag_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/transparent"
+        android:paddingLeft="@dimen/applayout_leftorright"
+        android:textSize="@dimen/textSize_16"/>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:layout_height="2dp"
+        android:layout_width="match_parent"/>
+
+    <View style="@style/line_style"/>
+
+    <include layout="@layout/include_dialog_bottom_view"/>
+
+
+</LinearLayout>

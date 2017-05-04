@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <SurfaceView
+	    android:id="@+id/task_photo_review"
+	  	android:layout_width="match_parent"
+	  	android:layout_height="match_parent"	
+    />
+    
+    <ImageView 
+        android:id="@+id/task_photo_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        />
+
+	
+	<RelativeLayout 
+	    android:id="@+id/take_photo_parenview"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="#00000000"
+	    >
+	    <ZoomControls 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginBottom="5dp"
+	        android:id="@+id/take_photo_zoomctrl"
+	        />
+	    
+	    <TextView 
+	        android:id="@+id/take_photo_currzoom"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="#fffcfcfc"
+	        android:textSize="12sp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        />
+	    
+	    <ImageButton 
+	        android:id="@+id/btn_take_photo_ok"
+	        android:background="@drawable/ok"
+	        android:layout_width="50dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_margin="5dp"
+	        />
+	    <ImageButton 
+	        android:id="@+id/btn_take_photo"
+	        android:background="@drawable/take_photo"
+	        android:layout_width="60dp"
+	        android:layout_height="60dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:layout_margin="5dp"
+	        />
+	    <ImageButton 
+	        android:id="@+id/btn_take_photo_cancel"
+	        android:background="@drawable/cancel"
+	        android:layout_width="50dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentBottom="true"
+	        android:layout_margin="5dp"
+	        />
+	</RelativeLayout>
+	<ImageView 
+	    android:id="@+id/take_photo_guide"
+	    android:src="@drawable/take_photo_guide"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:visibility="visible"
+	    />
+</FrameLayout>
