@@ -586,10 +586,10 @@ public class DPMListActivity extends ActActivity implements IXListViewListener, 
             orgFindMem.setOnClickListener( this );
             if (!isBulider) {  //当前用户不是个组织的创建者时，就隐藏下面三个字段
                 orgRequest_ll.setVisibility(View.GONE);   //申请列表
-//                orgAddMember_ll.setVisibility(View.GONE); //邀请成员
+                orgAddMember_ll.setVisibility(View.GONE); //邀请成员
                 orgAddDpm_ll.setVisibility(View.GONE);    //添加分组
                 orgFindMem.setVisibility(View.GONE);
-                inviteText.setText("推荐好友");
+                inviteText.setText("找 人 脉");
             }
             popupWindow_more = new PopupWindow(view, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             view.setOnTouchListener(this);
@@ -734,6 +734,7 @@ public class DPMListActivity extends ActActivity implements IXListViewListener, 
             @Override
             public void onCallBack(List<FriendInfo> status, List<FriendInfo> reply) {
                 if (reply == null || reply.size() < 1) {
+                    QLToastUtils.showToast(DPMListActivity.this, "暂没有联系人可以添加");
                     return;
                 }
                 // 过滤已经存在的成员
@@ -741,7 +742,7 @@ public class DPMListActivity extends ActActivity implements IXListViewListener, 
                 for (FriendInfo friendInfo : reply) {
                     boolean temp = true;
                     for (OrgRequestMemberInfo memberInfo : allMemberList) {
-                        if (friendInfo.getPhone().equals(memberInfo.getPhone())) {
+                        if (friendInfo.getWp_friends_info_id().equals(memberInfo.getWp_member_info_id())) {
                             temp = false;
                             continue;
                         }

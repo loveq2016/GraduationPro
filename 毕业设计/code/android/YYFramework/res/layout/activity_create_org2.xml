@@ -398,6 +398,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:hint="申请人姓名"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
                     android:textColor="#ff000000"
                     android:textSize="@dimen/textSize_16"/>
 

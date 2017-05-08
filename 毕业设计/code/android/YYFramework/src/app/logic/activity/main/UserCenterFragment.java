@@ -51,6 +51,7 @@ import app.logic.activity.card.CardListActivity2;
 import app.logic.activity.checkin.MyOrganizaActivity;
 import app.logic.activity.launch.LaunchActivity;
 import app.logic.activity.live.LiveListActivty;
+import app.logic.activity.org.DPMListNewActivity;
 import app.logic.activity.org.OrganizationListActivity2;
 import app.logic.activity.user.BindingPhoneActivity;
 import app.logic.activity.user.QRCodePersonal;
@@ -295,6 +296,7 @@ public class UserCenterFragment extends Fragment implements OnItemClickListener,
                 // 我的格局
                 Intent intent1 = new Intent();
                 intent1.setClass(UserCenterFragment.this.getContext(), OrganizationListActivity2.class);
+                intent1.setClass(UserCenterFragment.this.getContext(), DPMListNewActivity.class);
                 startActivity(intent1);
                 break;
             case 11:
@@ -486,6 +488,10 @@ public class UserCenterFragment extends Fragment implements OnItemClickListener,
 //        }
 
         nick.setText(userInfo.getNickName());
+        if (TextUtils.isEmpty(userInfo.getPhone()))
+            phone.setVisibility(View.INVISIBLE);
+        else
+            phone.setVisibility(View.VISIBLE);
         phone.setText("格局号：" + userInfo.getPhone());
         String decodeString = null;
         try {

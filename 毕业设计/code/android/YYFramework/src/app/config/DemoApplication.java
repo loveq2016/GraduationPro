@@ -101,7 +101,7 @@ public class DemoApplication extends MultiDexApplication {
 //		hxSDKHelper.onInit(applicationContext);
 //		EMChatManager.getInstance().setMipushConfig("2882303761517517983", "5421751746983");
 		TYLocationManager.getShareLocationManager();
-		UStreamingContext.init(getApplicationContext(), "krapnik_cn_ucloud_20170302");//  krapnik_ucloud_20170223   publish3-key
+		UStreamingContext.init(getApplicationContext(), YYAppConfig.UCLOUND_GCI);//  krapnik_ucloud_20170223   publish3-key
 		// SDKInitializer.initialize(getApplicationContext());// 百度地图SDK初始化
 		registerActivityLifecycleCallbacks( new MyLifecycleHandler());
 		rogToWx();

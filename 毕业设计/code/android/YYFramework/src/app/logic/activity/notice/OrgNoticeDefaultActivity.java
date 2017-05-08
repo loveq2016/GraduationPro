@@ -1,5 +1,6 @@
 package app.logic.activity.notice;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -205,11 +206,16 @@ public class OrgNoticeDefaultActivity extends ActActivity {
                     }else{
                         setTextToViewText(info.getMsg_creator(), "msg_user", convertView);
                     }
-                    setTextToViewText(ZSZSingleton.getTimeStyle(info.getMsg_create_time()), "msg_time", convertView);
+                    setTextToViewText(info.getMsg_create_time().substring(0,info.getMsg_create_time().lastIndexOf(":")), "msg_time", convertView);
+//                    setTextToViewText(ZSZSingleton.getTimeStyle(info.getMsg_create_time()), "msg_time", convertView);
                     SimpleDraweeView noticeIv = getViewForName("msg_iv", convertView);
                     SimpleDraweeView org_image = getViewForName("org_image", convertView);
 //                    noticeIv.setImageURI(HttpConfig.getUrl(info.getPicture_url()));
-                    FrescoImageShowThumb.showThrumb(Uri.parse(HttpConfig.getUrl(orgImageUrl)),noticeIv);
+                    String noticeImage = info.getMsg_notice_img();
+                    if (TextUtils.isEmpty(noticeImage)){
+                        noticeImage = info.getOrg_logo_url();
+                    }
+                    FrescoImageShowThumb.showThrumb(Uri.parse(HttpConfig.getUrl(noticeImage)),noticeIv);
                     FrescoImageShowThumb.showThrumb(Uri.parse(HttpConfig.getUrl(info.getPicture_url())),org_image);
 //                    Picasso.with(OrgNoticeDefaultActivity.this).load(HttpConfig.getUrl(info.getPicture_url())).error(R.drawable.item_notice_default).fit().centerCrop().into(noticeIv);
                 }
@@ -240,11 +246,16 @@ public class OrgNoticeDefaultActivity extends ActActivity {
                     }else{
                         setTextToViewText( info.getMsg_creator(), "msg_user", convertView);
                     }
-                    setTextToViewText(ZSZSingleton.getTimeStyle(info.getMsg_create_time()), "msg_time", convertView);
+//                    SimpleDateFormat adf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+                    setTextToViewText(info.getMsg_create_time().substring(0,info.getMsg_create_time().lastIndexOf(":")), "msg_time", convertView);
                     SimpleDraweeView noticeIv = getViewForName("msg_iv", convertView);
                     SimpleDraweeView org_image = getViewForName("org_image", convertView);
 //                    noticeIv.setImageURI(HttpConfig.getUrl(info.getPicture_url()));
-                    FrescoImageShowThumb.showThrumb(Uri.parse(HttpConfig.getUrl(orgImageUrl)),noticeIv);
+                    String noticeImage = info.getMsg_notice_img();
+                    if (TextUtils.isEmpty(noticeImage)){
+                        noticeImage = info.getOrg_logo_url();
+                    }
+                    FrescoImageShowThumb.showThrumb(Uri.parse(HttpConfig.getUrl(noticeImage)),noticeIv);
                     FrescoImageShowThumb.showThrumb(Uri.parse(HttpConfig.getUrl(info.getPicture_url())),org_image);
 //                    Picasso.with(OrgNoticeDefaultActivity.this).load(HttpConfig.getUrl(info.getPicture_url())).error(R.drawable.item_notice_default).fit().centerCrop().into(noticeIv);
                 }

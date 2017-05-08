@@ -27,7 +27,7 @@ class IcsLinearLayout extends LinearLayout {
     private static final int[] LL = new int[] {
         /* 0 */ android.R.attr.divider,
         /* 1 */ R.attr.showDividers1,
-        /* 2 */ R.attr.dividerPadding1,
+        /* 2 */ R.attr.dividerPadding,
     };
     private static final int LL_DIVIDER = 0;
     private static final int LL_SHOW_DIVIDER = 1;

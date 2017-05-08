@@ -206,7 +206,7 @@ public class AddFriendToChatRoom extends InitActActivity implements OnItemClickL
 						for (FriendInfo friendInfo : reply) {
 							boolean status = true;
 							for (int i = 0; i < chatRoomMemberList.size(); i++) {
-								if (friendInfo.getPhone().equals(chatRoomMemberList.get(i).getPhone())) {
+								if (friendInfo.getWp_friends_info_id().equals(chatRoomMemberList.get(i).getWp_friends_info_id())) {
 									status = false;
 									break;
 								}

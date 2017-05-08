@@ -337,7 +337,7 @@
         android:background="@color/line_bg"/>
 
     <RelativeLayout
-        android:id="@+id/user_info_company_layout"
+        android:id="@+id/user_info_company_title_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/userinfo_item_height"
         android:background="@color/white"
@@ -347,317 +347,359 @@
         android:paddingTop="8dp">
 
         <TextView
-            android:id="@+id/user_info_company"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="公司单位"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <TextView
-            android:id="@+id/user_info_company_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/user_info_company"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text=""
-            android:textSize="@dimen/textSize_14"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/userinfo_item_height"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/company_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="公司单位标志"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/user_info_company_img"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignRight="@+id/company_logo"
-            android:layout_alignParentRight="true"
-            fresco:placeholderImage="@drawable/default_user_icon"
-            fresco:roundedCornerRadius="10dp"
-            android:scaleType="fitXY"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"
-        android:visibility="gone"/>
-
-    <RelativeLayout
-        android:id="@+id/user_info_address_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/userinfo_item_height"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp">
-
-        <TextView
-            android:id="@+id/user_info_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="办公地址"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <TextView
-            android:id="@+id/user_info_address_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/user_info_address"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text=""
-            android:textSize="@dimen/textSize_18"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
-
-    <RelativeLayout
-        android:id="@+id/user_info_depart_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/userinfo_item_height"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp">
-
-        <TextView
-            android:id="@+id/user_info_depart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="职务"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <TextView
-            android:id="@+id/user_info_depart_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/user_info_depart"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text=""
-            android:textSize="@dimen/textSize_18"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
-
-    <RelativeLayout
-        android:id="@+id/user_info_trade_layout"
-        android:layout_width="match_parent"
-        android:minHeight="@dimen/userinfo_item_height"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp">
-
-        <TextView
-            android:id="@+id/user_info_trade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="行业范围"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <TextView
-            android:id="@+id/user_info_trade_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/user_info_trade"
-            android:layout_alignParentRight="true"
-            android:gravity="right"
-            android:layout_centerVertical="true"
-            android:text=""
-            android:textSize="@dimen/textSize_18"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
-
-    <RelativeLayout
-        android:id="@+id/user_info_business_layout"
-        android:layout_width="match_parent"
-        android:minHeight="@dimen/userinfo_item_height"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp">
-
-        <TextView
-            android:id="@+id/user_info_business"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:gravity="right"
-            android:text="业务范围"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <TextView
-            android:id="@+id/user_info_business_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/user_info_business"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text=""
-            android:textSize="@dimen/textSize_18"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
-
-    <RelativeLayout
-        android:id="@+id/user_info_web_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/userinfo_item_height"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp">
-
-        <TextView
-            android:id="@+id/user_info_web"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="网址"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <TextView
-            android:id="@+id/user_info_web_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/user_info_web"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text=""
-            android:textSize="@dimen/textSize_18"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
-
-    <RelativeLayout
-        android:id="@+id/user_info_company_info"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/userinfo_item_height"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="公司简介"
+            android:text="公司资料"
             android:textColor="#000000"
             android:textSize="@dimen/textSize_18"/>
 
         <ImageView
-            android:layout_width="@dimen/userinfo_item_right_width"
-            android:layout_height="@dimen/userinfo_item_right_height"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ty_open_duration_btn"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
-
-    <RelativeLayout
-        android:id="@+id/user_info_about_me"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/userinfo_item_height"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        android:paddingLeft="@dimen/applayout_leftorright"
-        android:paddingRight="@dimen/applayout_leftorright"
-        android:paddingTop="8dp"
-        android:visibility="gone">
-
-        <TextView
+            android:id="@+id/icon_open"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="关于"
-            android:textColor="#000000"
-            android:textSize="@dimen/textSize_18"/>
-
-        <ImageView
-            android:id="@+id/rightView07"
-            android:layout_width="@dimen/userinfo_item_right_width"
-            android:layout_height="@dimen/userinfo_item_right_height"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ty_open_duration_btn"/>
+            android:src="@drawable/open_icon_company"/>
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:background="@color/line_bg"/>
+        android:background="@color/button_bg"/>
+
+    <LinearLayout
+        android:id="@+id/all_company_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <RelativeLayout
+            android:id="@+id/user_info_company_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_item_height"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/user_info_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="公司单位"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <TextView
+                android:id="@+id/user_info_company_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/user_info_company"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="@dimen/textSize_14"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_item_height"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/company_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="公司单位标志"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/user_info_company_img"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignRight="@+id/company_logo"
+                android:layout_alignParentRight="true"
+                fresco:placeholderImage="@drawable/default_user_icon"
+                fresco:roundedCornerRadius="10dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/user_info_address_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_item_height"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/user_info_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="办公地址"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <TextView
+                android:id="@+id/user_info_address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/user_info_address"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="@dimen/textSize_18"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/user_info_depart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_item_height"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/user_info_depart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="职务"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <TextView
+                android:id="@+id/user_info_depart_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/user_info_depart"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="@dimen/textSize_18"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/user_info_trade_layout"
+            android:layout_width="match_parent"
+            android:minHeight="@dimen/userinfo_item_height"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/user_info_trade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="行业范围"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <TextView
+                android:id="@+id/user_info_trade_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/user_info_trade"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="@dimen/textSize_18"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/user_info_business_layout"
+            android:layout_width="match_parent"
+            android:minHeight="@dimen/userinfo_item_height"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/user_info_business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:text="业务范围"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <TextView
+                android:id="@+id/user_info_business_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/user_info_business"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="@dimen/textSize_18"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/user_info_web_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_item_height"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/user_info_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="网址"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <TextView
+                android:id="@+id/user_info_web_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/user_info_web"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="@dimen/textSize_18"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/user_info_company_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_item_height"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="公司简介"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <ImageView
+                android:layout_width="@dimen/userinfo_item_right_width"
+                android:layout_height="@dimen/userinfo_item_right_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ty_open_duration_btn"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/user_info_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_item_height"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            android:paddingLeft="@dimen/applayout_leftorright"
+            android:paddingRight="@dimen/applayout_leftorright"
+            android:paddingTop="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="关于"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize_18"/>
+
+            <ImageView
+                android:id="@+id/rightView07"
+                android:layout_width="@dimen/userinfo_item_right_width"
+                android:layout_height="@dimen/userinfo_item_right_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ty_open_duration_btn"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/line_bg"/>
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/user_info_btn_logout"

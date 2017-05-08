@@ -79,7 +79,7 @@ public class OrganizationDetailActivity2 extends InitActActivity implements View
     private ArrayList<ArrayList<String>> citesList = new ArrayList<ArrayList<String>>();
     private String provice_name, city_name;
 
-    private SimpleDraweeView logoView;
+    private ImageView logoView;
     private TextView nameView;
     private EditText org_des;
     private TextView org_count;
@@ -109,7 +109,7 @@ public class OrganizationDetailActivity2 extends InitActActivity implements View
         setContentView(R.layout.activity_review_org_info2); //org_number  org_des
         initActTitle();
 
-        logoView = (SimpleDraweeView) findViewById(R.id.org_review_logo_view);
+        logoView = (ImageView) findViewById(R.id.org_review_logo_view);
         nameView = (TextView) findViewById(R.id.org_review_name_view);
         org_des = (EditText) findViewById(R.id.org_des);
         org_count = (TextView) findViewById(R.id.org_count);
@@ -181,8 +181,8 @@ public class OrganizationDetailActivity2 extends InitActActivity implements View
         }
         String logo_url = HttpConfig.getUrl(orgInfo.getOrg_logo_url());
 
-        FrescoHelper.asyncLoad(Uri.parse(logo_url), logoView);
-        // Picasso.with(this).load(logo_url).placeholder(R.drawable.default_user_icon).fit().centerCrop().into(logoView);
+//        FrescoHelper.asyncLoad(Uri.parse(logo_url), logoView);
+         Picasso.with(this).load(logo_url).placeholder(R.drawable.default_user_icon).fit().centerCrop().into(logoView);
         nameView.setText(orgInfo.getOrg_name());
 
         org_des.setText(orgInfo.getOrg_des());
@@ -214,7 +214,7 @@ public class OrganizationDetailActivity2 extends InitActActivity implements View
         add_friend_to_org.setOnClickListener(this);
         org_qrcode.setOnClickListener(this);
         org_qrcode_layout.setOnClickListener(this);
-        org_memberNum_layout.setOnClickListener(this);
+//        org_memberNum_layout.setOnClickListener(this);
 //		org_addr_layout.setOnClickListener(this);
 
         YYSingleton.getInstance().setUpdataOrgMemNumListener(new UpdataOrgMemNumListener() {

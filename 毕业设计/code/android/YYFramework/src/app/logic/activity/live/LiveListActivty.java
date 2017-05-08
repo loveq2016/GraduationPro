@@ -135,7 +135,7 @@ public class LiveListActivty extends ActActivity implements View.OnClickListener
                         intent.putExtra(LiveDetailsActivity.ORG_ID , isOnLiveOrgInfo.getOrg_id() );
                         intent.putExtra(LiveDetailsActivity.ORG_NAME , isOnLiveOrgInfo.getOrg_name() );
                         intent.putExtra(LiveDetailsActivity.ORG_LOG_URL , isOnLiveOrgInfo.getOrg_logo_url() );
-                        intent.putExtra(LiveDetailsActivity.ORG_BUIDER_NAME , isOnLiveOrgInfo.getOrg_builder_name());
+                        intent.putExtra(LiveDetailsActivity.ORG_BUIDER_NAME , isOnLiveOrgInfo.getLive_creator_name());
                         intent.setClass( LiveListActivty.this , LiveDetailsActivity.class);
                         startActivity( intent );
                     }else{
@@ -357,7 +357,7 @@ public class LiveListActivty extends ActActivity implements View.OnClickListener
         Intent intent = new Intent();
         intent.putExtra(StartLiveActivity.ORG_ID , orgInfo.getOrg_id());
         intent.putExtra(StartLiveActivity.ORG_NAME, orgInfo.getOrg_name());
-        intent.putExtra(StartLiveActivity.ORG_BUIDER_NAME ,orgInfo.getNickName());
+        intent.putExtra(StartLiveActivity.ORG_BUIDER_NAME ,orgInfo.getLive_creator_name());
         intent.putExtra(StartLiveActivity.ORG_LOGO_URL ,orgInfo.getOrg_logo_url());
         intent.putExtra(PrepareStartLiveActivity.LIVE_ID ,orgInfo.getLive_id());
         intent.setClass( this , PrepareStartLiveActivity.class );

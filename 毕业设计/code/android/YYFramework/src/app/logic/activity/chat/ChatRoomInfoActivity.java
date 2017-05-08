@@ -187,7 +187,7 @@ public class ChatRoomInfoActivity extends ActActivity implements OnClickListener
 
         public int getItemViewType(int position) {
             UserInfo info = getItem(position);
-            if (TextUtils.isEmpty(info.getPhone()) && info.isLastItem()) {
+            if (TextUtils.isEmpty(info.getWp_member_info_id()) && info.isLastItem()) {
                 return 4;
             } else if (TextUtils.isEmpty(info.getWp_member_info_id())) {
                 return 3;// 最后一张

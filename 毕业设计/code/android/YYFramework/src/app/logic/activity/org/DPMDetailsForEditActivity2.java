@@ -424,9 +424,9 @@ public class DPMDetailsForEditActivity2 extends ActActivity implements View.OnCl
                 }
                 datas.clear();
                 for (UserInfo info : reply) {
-                    if( TextUtils.isEmpty(info.getPhone()) ){
-                        continue;
-                    }
+//                    if( TextUtils.isEmpty(info.getPhone()) ){
+//                        continue;
+//                    }
                     ExpansionInfo expansionInfo = new ExpansionInfo();
                     expansionInfo.setItemName( info.getName() );
                     expansionInfo.setNickName(info.getNickName());
@@ -555,9 +555,9 @@ public class DPMDetailsForEditActivity2 extends ActActivity implements View.OnCl
                 }
                 List<OrgRequestMemberInfo> lastInfos = new ArrayList<OrgRequestMemberInfo>();
                 for (OrgRequestMemberInfo memberInfo : reply) {
-                    if (TextUtils.isEmpty(memberInfo.getPhone())) {           //手機號為空的，不是真實有效的數據
-                        continue;
-                    }
+//                    if (TextUtils.isEmpty(memberInfo.getPhone())) {           //手機號為空的，不是真實有效的數據
+//                        continue;
+//                    }
                     if( memberInfo.isIsbuilder()){      //邀请分组成员时，不能邀请这个组织的超级管理员
                         continue;
                     }
@@ -573,7 +573,7 @@ public class DPMDetailsForEditActivity2 extends ActActivity implements View.OnCl
                 for (OrgRequestMemberInfo memberInfo : lastInfos) {
                     boolean temp = true;
                     for (ExpansionInfo expansionInfo : datas) {
-                        if (memberInfo.getPhone().equals(expansionInfo.getItemPhone())) {   //已经被选则这个分组中了
+                        if (memberInfo.getWp_member_info_id().equals(expansionInfo.getWp_member_info_id())) {   //已经被选则这个分组中了
                             temp = false;
                         }
                     }

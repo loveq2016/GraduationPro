@@ -274,9 +274,9 @@ public class SelectMemberToDPMActivity extends InitActActivity implements OnItem
 				List<OrgRequestMemberInfo> tempInfos = new ArrayList<OrgRequestMemberInfo>();
 
 				for (OrgRequestMemberInfo info : reply) {
-					if (info.getPhone() == null || TextUtils.isEmpty(info.getPhone())) {
-						continue;
-					}
+//					if (info.getPhone() == null || TextUtils.isEmpty(info.getPhone())) {
+//						continue;
+//					}
 					tempInfos.add(info);
 				}
 				allItems.addAll(memberListToFriendList(tempInfos));

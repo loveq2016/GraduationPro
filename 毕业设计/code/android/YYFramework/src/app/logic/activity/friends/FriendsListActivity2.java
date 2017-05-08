@@ -313,37 +313,6 @@ public class FriendsListActivity2 extends ActActivity implements OnItemClickList
      */
 
     private void getFriendsListDatas() {
-//        // 删除,和显示
-//        String userInfoDatasString = getIntent().getStringExtra(DETELE_FRIENDS);
-//        roomAll = getIntent().getBooleanExtra( ROOMALL , false );   //来自群组全部成员的标志
-//        // ---------仅显示---------------
-//        if (getIntent().getStringExtra(IS_SHOW_CHECKBOX) != null) {
-//            showCheckBoxStatus = false;
-//            setBut.setVisibility(View.INVISIBLE);
-//        }
-//        // -----------------------------
-//        if (userInfoDatasString != null) {  //删除状态下
-//            //delectStatus = true;
-//            List<UserInfo> userInfosDatasTemp = gson.fromJson(userInfoDatasString, new TypeToken<List<UserInfo>>() {}.getType());
-//            datas.clear();
-//            datas.addAll(fillSortDatasUserInfos(userInfosDatasTemp));
-//            mAdapter.setDatas(datas);
-//            if (showCheckBoxStatus) {
-//                setBut.setText("删除");
-//            }
-//            return;
-//        }
-//
-//        // 增加
-//        String userInfoString = getIntent().getStringExtra(ADD_FRIENDS);
-//        if (userInfoString != null) {
-//            selectUserInfos.clear();
-//            List<UserInfo> userInfosTemp = gson.fromJson(userInfoString, new TypeToken<List<UserInfo>>() {}.getType());
-//            if (userInfosTemp != null && userInfosTemp.size() > 0) {
-//                selectUserInfos.addAll(userInfosTemp);
-//            }
-//        }
-
         showWaitDialog();
         UserManagerController.getFriendsList(this, new Listener<List<FriendInfo>, List<FriendInfo>>() {
             @Override
@@ -357,12 +326,14 @@ public class FriendsListActivity2 extends ActActivity implements OnItemClickList
                     List<FriendInfo> tempFriendInfos = new ArrayList<FriendInfo>();
                     for (FriendInfo friendInfo : reply) {
                         boolean status = true;
-//                        for (UserInfo userInfo : selectUserInfos) {
-//                            if (friendInfo.getPhone().equals(userInfo.getPhone())) {
-//                                status = false;
-//                                break;
-//                            }
-//                        }
+                        for (UserInfo userInfo : selectUserInfos) {
+                            if (friendInfo.getWp_friends_info_id() != null &&
+                                    friendInfo.getWp_friends_info_id().equals(userInfo.getWp_member_info_id()))
+                            {
+                                status = false;
+                                break;
+                            }
+                        }
                         if (status && friendInfo.isRequest_accept() ) {
                             tempFriendInfos.add(friendInfo);
                         }
@@ -650,7 +621,7 @@ public class FriendsListActivity2 extends ActActivity implements OnItemClickList
         }
         List<UserInfo> roomMemberList = new ArrayList<>();
         for( int i = 0 ; i< userInfos.size() ; i++){
-            if( !TextUtils.isEmpty(userInfos.get(i).getPhone()) && userInfos.get(i).getIs_remove()==0){  //0，还在此聊天室的， 1 ， 已被移除此聊天室的
+            if( userInfos.get(i).getIs_remove()==0){  //0，还在此聊天室的， 1 ， 已被移除此聊天室的
                 roomMemberList.add(userInfos.get(i));
             }
         }

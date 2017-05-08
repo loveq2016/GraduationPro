@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title_layout" />
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/sharp_blue_rect_stroke">
+
+        <!--<View-->
+            <!--android:id="@+id/line_view"-->
+            <!--android:layout_width="0.5dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@color/line_bg" />-->
+        <RelativeLayout
+            android:id="@+id/unread_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/sharp_blue_rect_solid"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/unread_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:text="我创建的" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hasRead_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/hasRead_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:textColor="#00a3ff"
+                android:text="我加入的" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <View
+    android:id="@+id/line_view"
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:layout_centerInParent="true"
+    android:background="@color/line_bg" />
+
+    <app.view.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </app.view.CustomViewPager>
+
+</LinearLayout>

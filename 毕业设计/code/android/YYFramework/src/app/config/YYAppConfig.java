@@ -13,6 +13,9 @@ import android.content.Context;
 */
 public class YYAppConfig {
 	public static final String HANVAN_KEY = "c153d134-d483-47e3-b6d2-6c4155739b70";
+	public static final String UCLOUND_GCI = "ucloud.publish.gzyueyun.comb73fb497";
+	public static final String UCLOUND_PUSH_STREAM = "rtmp://publish.gzyueyun.com/ucloud/";
+	public static final String UCLOUND_PLAY_STREAM = "rtmp://rtmp.gzyueyun.com/ucloud/";
 	private static final String DEFAULT_SETTING_JSON_FILE_NAME = "AppConfig.json";
 	private static YYAppConfig _shareInstance;
 	private boolean debugMod;

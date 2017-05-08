@@ -248,7 +248,7 @@ public class HttpConfig {
     public static final String UPLOAD_IMAGE_URL = "/xhapi/ImageUploadController/uploadImgReUrl.hn";
 
     // 检查更新
-    public static final String GET_CHECK_UPDATA_APP = "/xhapi/appController/checkUpdate.hn?app_name=geju_android";
+    public static final String GET_CHECK_UPDATA_APP = "/xhapi/appController/checkUpdate.hn?app_name=geju_android_v2";
 
     // 提交问题
     public static final String POST_CONTENT = "/xhapi/AssociationController/addHelpInfo.hn";
@@ -278,6 +278,10 @@ public class HttpConfig {
     public static final String GET_LIVE_CAROUSEL_IMG = "/xhapi/LiveController/carousel.hn";
     //设置直播封面和直播标题
     public static final String SET_LIVE_INFO = "/xhapi/LiveController/setLiveInfo.hn";
+    //成员进入或退出直播间
+    public static final String LIVE_ENTER_EXIT = "/xhapi/LiveController/saveOrUpdateAudience.hn";
+    //获取所有正在观看直播的观众
+    public static final String GET_LIVE_AUDIENCE = "/xhapi/LiveController/getAudience.hn";
 
     //修改群昵称
     public static final String MODIYF_CAHT_ROOM_NAME = "/xhapi/ChatRoomController/updateGroupName.hn";

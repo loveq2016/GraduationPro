@@ -388,7 +388,7 @@ public class HomeActivity extends TYBaseActivity implements EMMessageListener , 
                                         if (yyChatSessionInfo.getWp_member_info_id().equals(yyChatSessionInfo.getWp_other_info_id())) {
                                             continue;
                                         }
-                                        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(yyChatSessionInfo.getPhoneNumber());
+                                        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(yyChatSessionInfo.getWp_member_info_id());
                                         if (conversation != null) {
                                         }
                                         unReadCount += conversation.getUnreadMsgCount();
@@ -1222,7 +1222,8 @@ public class HomeActivity extends TYBaseActivity implements EMMessageListener , 
                             }
                             // sessionList.add(yyChatSessionInfo);
                             // 计算未读
-                            EMConversation conversation = EMClient.getInstance().chatManager().getConversation(yyChatSessionInfo.getPhoneNumber());
+//                            EMConversation conversation = EMClient.getInstance().chatManager().getConversation(yyChatSessionInfo.getPhoneNumber());
+                            EMConversation conversation = EMClient.getInstance().chatManager().getConversation(yyChatSessionInfo.getWp_member_info_id());
                             if (conversation != null) {
                                 unReadCountTemp += conversation.getUnreadMsgCount();
                             }

@@ -106,6 +106,8 @@ public class UserInfoActivity extends ActActivity implements OnClickListener {
     private View mCountryView,mCompanyView,mAddressView,mDepartView,mTradeView,mBusinessView,mWebView;
     private TextView mCountry,mCompany,mAddress,mDepart,mTrade,mBusiness,mWeb;
     private SimpleDraweeView mCompanyLogo;
+    private View companyLL;
+    private ImageView openIcon;
 
     private SharepreferencesUtils utils ;
 
@@ -255,6 +257,10 @@ public class UserInfoActivity extends ActActivity implements OnClickListener {
         mBusinessView.setOnClickListener(this);
         mWebView.setOnClickListener(this);
         mCompanyLogo.setOnClickListener(this);
+
+        openIcon = (ImageView) findViewById(R.id.icon_open);
+        companyLL = findViewById(R.id.all_company_ll);
+        findViewById(R.id.user_info_company_title_layout).setOnClickListener(this);
     }
 
     private void openHome() {
@@ -540,6 +546,10 @@ public class UserInfoActivity extends ActActivity implements OnClickListener {
         FrescoImageShowThumb.showThrumb(Uri.parse(userPic),pic);
         //FrescoHelper.asyncLoad(this ,Uri.parse(userPic), pic);
         nick.setText(userInfo.getNickName());
+        if (TextUtils.isEmpty(userInfo.getPhone()))
+            phone.setVisibility(View.INVISIBLE);
+        else
+            phone.setVisibility(View.VISIBLE);
         phone.setText("格局号：" + userInfo.getPhone());
         String decodeString = null;
         try {
@@ -634,7 +644,7 @@ public class UserInfoActivity extends ActActivity implements OnClickListener {
                                 @Override
                                 public void onCallBack(Integer status, String reply) {
                                     dismissWaitDialog();
-                                    // getUserInfo();
+                                     getUserInfo();
                                 }
                             });
                         }
@@ -762,6 +772,15 @@ public class UserInfoActivity extends ActActivity implements OnClickListener {
             case R.id.user_info_company_info:
                 UserInfo userInfo4 = UserManagerController.getCurrUserInfo();
                 startActivity(new Intent(this,CompanyInfoActivity.class).putExtra(CompanyInfoActivity.EXTRA_TEXT, userInfo4.getCompany_intro()));
+                break;
+            case R.id.user_info_company_title_layout:
+                if (companyLL.getVisibility() == View.VISIBLE){
+                    companyLL.setVisibility(View.GONE);
+                    openIcon.setImageResource(R.drawable.open_icon_company);
+                }else{
+                    companyLL.setVisibility(View.VISIBLE);
+                    openIcon.setImageResource(R.drawable.close_icon_company);
+                }
                 break;
         }
     }

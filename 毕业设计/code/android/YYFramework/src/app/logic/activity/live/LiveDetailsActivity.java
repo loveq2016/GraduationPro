@@ -26,8 +26,10 @@ import org.ql.utils.QLToastUtils;
 import java.util.List;
 import java.util.Random;
 
+import app.config.YYAppConfig;
 import app.config.http.HttpConfig;
 import app.logic.activity.main.HomeActivity;
+import app.logic.controller.LivestreamController;
 import app.logic.controller.OrganizationController;
 import app.logic.controller.UserManagerController;
 import app.logic.live.view.LiveView;
@@ -49,9 +51,10 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UPlayerStat
     public static final String  ORG_ID = "ORGID";
     public static final String ORG_LOG_URL="ORGLOGURL";
     public static final String ORG_BUIDER_NAME="ORGBUIDERNAME";
+    public static final String  USER_LIVE_ID = "uesrLiveId";
 
     //拉流地址  http://player.krapnik.cn/uload/123456.flv
-    String rtmpPlayStreamUrl = "rtmp://rtmp.krapnik.cn/ucloud/";//rtmp://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/ ，http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/15959.flv
+    String rtmpPlayStreamUrl = YYAppConfig.UCLOUND_PLAY_STREAM;//rtmp://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/ ，http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/15959.flv
     private UVideoView mVideoView;
     @BindView(R.id.loading_layout)
     RelativeLayout loadingLayout;  //加载中父view
@@ -71,7 +74,7 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UPlayerStat
     private LiveView liveback;
 
 
-    private String  orgName , orgId ,orgBuiderName , orgLogUrl , uesrLiveId;
+    private String  orgName , orgId ,orgBuiderName , orgLogUrl ;
 
     private static final int MIN_RECONNECT_READ_FRAME_TIMEOUT_COUNT = 3;
     private static final int MIN_RECONNECT_PREPARE_TIMEOUT_COUNT = 3;
@@ -93,6 +96,7 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UPlayerStat
         liveback.setRoomMessgeViewShow( this );
         mVideoView = (UVideoView) findViewById(R.id.videoview);
         liveId = getIntent().getStringExtra( PLUG );
+        uesrLiveId = getIntent().getStringExtra( USER_LIVE_ID );
         chatroomId= getIntent().getStringExtra( ROOM_ID ) ;
         orgId = getIntent().getStringExtra( ORG_ID );
         //获取组织成员列表
@@ -235,6 +239,7 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UPlayerStat
                 }
             }
         }).start();
+        updateMember("1");
     }
 
     @Override
@@ -261,6 +266,7 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UPlayerStat
                 }
             }
         }).start();
+        updateMember("1");
     }
 
     @Override
@@ -317,6 +323,7 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UPlayerStat
                         }
                     }
                 }).start();
+                updateMember("0");
                 break;
             case VIDEO_SIZE_CHANGED:  //视屏大小发生变化（应该是切换屏幕的时候回调这里）
                 break;
@@ -327,6 +334,10 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UPlayerStat
                 break;
         }
 
+    }
+
+    private void updateMember(String enterExit){
+        LivestreamController.enterExitLiveRoom(this,uesrLiveId,enterExit,null);
     }
 
     @Override

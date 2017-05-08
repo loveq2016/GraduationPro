@@ -1,6 +1,9 @@
 package app.logic.activity.user;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -23,6 +26,7 @@ import org.ql.activity.customtitle.ActActivity;
 import org.ql.utils.QLToastUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import app.config.DemoApplication;
 import app.config.http.HttpConfig;
@@ -59,7 +63,7 @@ public class PrepareLoginActivity extends ActActivity implements View.OnClickLis
         findViewById(R.id.login_wechat).setOnClickListener(this);
         findViewById(R.id.login_role).setOnClickListener(this);
 
-        ((TextView)findViewById(R.id.login_role)).setText(Html.fromHtml("登录即代码您同意《<u><font color=\"#ff0000\">格局软件使用服务协议</font></u>》"));
+        ((TextView)findViewById(R.id.login_role)).setText(Html.fromHtml("登录即代表您同意《<u><font color=\"#ff0000\">格局软件使用服务协议</font></u>》"));
         utils = new SharepreferencesUtils(this);
 
         initWxHandler();
@@ -72,18 +76,39 @@ public class PrepareLoginActivity extends ActActivity implements View.OnClickLis
                 startActivity(new Intent(this,LoginActivity.class));
                 break;
             case R.id.login_wechat:
-                SendAuth.Req req = new SendAuth.Req();
-                req.scope = "snsapi_userinfo";
-                req.state = "wechat_sdk_demo_test";
-                //发送授权登陆请求
-                api.sendReq(req);
+                if (isWeixinAvilible(this)) {
+                    SendAuth.Req req = new SendAuth.Req();
+                    req.scope = "snsapi_userinfo";
+                    req.state = "wechat_sdk_demo_test";
+                    //发送授权登陆请求
+                    api.sendReq(req);
+                }else
+                    QLToastUtils.showToast(this,"未安装微信，请先安装");
+
                 break;
             case R.id.login_role:
                 startActivity(new Intent(this, WebBrowserActivity.class).putExtra(WebBrowserActivity.KBROWSER_HOME_URL, HttpConfig.SERVICE_TERM));
 
+
                 break;
         }
     }
+
+    public static boolean isWeixinAvilible(Context context) {
+        final PackageManager packageManager = context.getPackageManager();// 获取packagemanager
+        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 获取所有已安装程序的包信息
+        if (pinfo != null) {
+            for (int i = 0; i < pinfo.size(); i++) {
+                String pn = pinfo.get(i).packageName;
+                if (pn.equals("com.tencent.mm")) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
     private Handler mhanler = new Handler() {
         public void handleMessage(Message msg) {
@@ -192,11 +217,17 @@ public class PrepareLoginActivity extends ActActivity implements View.OnClickLis
                 }else{
                     if (reply !=null && reply.size()>0){
                         UserInfo info = reply.get(0);
-                        startActivity(new Intent(PrepareLoginActivity.this,WXBindPhoneActivity.class).putExtra(WXBindPhoneActivity.WX_CODE,wxCode).putExtra("nickname",info.getNickName()).putExtra("headimgurl",info.getPicture_url()));
+                        startActivityForResult(new Intent(PrepareLoginActivity.this,WXBindPhoneActivity.class).putExtra(WXBindPhoneActivity.WX_CODE,wxCode).putExtra("nickname",info.getNickName()).putExtra("headimgurl",info.getPicture_url()),0);
                     }else
                         QLToastUtils.showToast(PrepareLoginActivity.this,"登录失败，请重试");
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        dismissWaitDialog();
     }
 }

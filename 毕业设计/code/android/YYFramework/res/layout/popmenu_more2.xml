@@ -96,6 +96,7 @@
             android:src="@drawable/icon_member_list" />
 
         <TextView
+            android:id="@+id/invite_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -142,7 +143,7 @@
             android:src="@drawable/icon_member" />
 
         <TextView
-            android:id="@+id/invite_text"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"

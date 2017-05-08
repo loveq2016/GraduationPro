@@ -106,33 +106,19 @@ public class SettingActivity extends InitActActivity implements OnClickListener 
 				if (reply == null || reply.size() < 1) {
 					return;
 				}
-				UpdataAppInfo info = reply.get(0);
-
-//				int versionCode = SystemBuilderUtils.getInstance().getAppVersionCode(SettingActivity.this);
-//				if (versionCode == -1) {
-//					return;
-//				}
-//				int newVersionCode = Integer.parseInt(info.getApp_version());
-//				if (versionCode < newVersionCode) {
-//					// showUpdataApp(versionCode, info);
-//					updataAppInfo = info;
-//					appUpdataStatusIv.setVisibility(View.VISIBLE);
-//				}
-
-				String versionName = SystemBuilderUtils.getInstance().getAppVersionName(SettingActivity.this);//当前应用的版本名称
-				if( null == versionName || TextUtils.isEmpty(versionName)){
-					return;
+				try{
+					UpdataAppInfo info = reply.get(0);
+					int currVersionCode = SystemBuilderUtils.getAppVersionCode(SettingActivity.this);
+					int latestVersion = Integer.parseInt(info.getApp_version());
+					if (latestVersion > currVersionCode){
+						updataAppInfo = info;
+						appUpdataStatusIv.setVisibility(View.VISIBLE);
+						return;
+					}
+				}catch (Exception e){
+					e.printStackTrace();
 				}
-				String newversionName = info.getApp_version();
-				versionName = versionName.replace(".","0");       //将 “.” 换成 “0” （ 以后有三个 . 这个也适合判断 ）
-				newversionName = newversionName.replace(".","0");
-
-				if(Long.parseLong(newversionName) > Long.parseLong(versionName)){  //有新版本
-					updataAppInfo = info;
-					appUpdataStatusIv.setVisibility(View.VISIBLE);
-				}else{
-					appUpdataStatusIv.setVisibility(View.GONE);
-				}
+				appUpdataStatusIv.setVisibility(View.GONE);
 			}
 		});
 	}
@@ -143,28 +129,8 @@ public class SettingActivity extends InitActActivity implements OnClickListener 
 	 * @param info
 	 */
 	private void showUpdataApp(String oldVersionCode, final UpdataAppInfo info) {
-
-//		View view = LayoutInflater.from(this).inflate(R.layout.app_updata_view, null);
-//		appUpDataDialog = new DialogNewStyleController(this, view);
-//		TextView titleTv = (TextView) view.findViewById(R.id.dialog_title_tv);
-//		TextView tagEdt = (TextView) view.findViewById(R.id.dialog_tag_edt);
-//		Button sendBtn = (Button) view.findViewById(R.id.dialog_cancel_btn);
-//		final Button cancel = (Button) view.findViewById(R.id.dialog_true_btn);
-//		titleTv.setText("版本更新");
-//		sendBtn.setText("更新");
-//		cancel.setText("取消");
-
-//        final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-//        alertDialog.setIcon(0);
-//        alertDialog.setTitle(info.getApp_update_msg());
-//        View view = LayoutInflater.from(LaunchActivity.this).inflate(R.layout.dialog_updata_app_layout, null);
-//        alertDialog.setView(view);
-//        TextView message_tv = (TextView) view.findViewById(R.id.message_tv);
-//        message_tv.setText("当前版本为" + String.valueOf(oldVersionCode) + "，检测到的最新版本为" + String.valueOf(info.getApp_version()) + ",是否要更新？？");
-//        message_tv.setText("当前版本为" + oldVersionCode + "，检测到的最新版本为" + String.valueOf(info.getApp_version()) + ",是否要更新？");
-//        Button yes_btn = (Button) view.findViewById(R.id.yes_btn);
-//        final Button no_btn = (Button) view.findViewById(R.id.no_btn);
-		tagEdt.setText("当前版本为" + oldVersionCode + "，检测到的最新版本为" + String.valueOf(info.getApp_version()) + ",是否要更新？");
+		String notice = info.getApp_update_msg() +"";
+		tagEdt.setText(notice);
 		sendBtn.setOnClickListener(new OnClickListener() {
 
 			@Override

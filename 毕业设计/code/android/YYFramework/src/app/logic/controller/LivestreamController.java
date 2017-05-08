@@ -15,6 +15,7 @@ import java.util.List;
 
 import app.config.http.HttpConfig;
 import app.config.http.YYResponseData;
+import app.logic.pojo.LiveMemberInfo;
 import app.logic.pojo.LivestreamInfo;
 import app.logic.pojo.OrgListByBuilderInfo;
 import app.utils.common.Listener;
@@ -95,7 +96,7 @@ public class LivestreamController {
                 } else if (responseData != null) {
                     msg = responseData.getErrorMsg();
                 } else {
-                    msg = "位置错误";
+                    msg = "未知错误";
                 }
                 listener.onCallBack(msg, null);
             }
@@ -146,17 +147,17 @@ public class LivestreamController {
     /**
      * 关闭直播
      * @param context
-     * @param org_id
+     * @param live_id
      * @param
      * @param
      */
-    public static void colseLiveStream(Context context , String org_id,  final Listener<Boolean, String> listener) {
+    public static void colseLiveStream(Context context , String live_id,  final Listener<Boolean, String> listener) {
         QLHttpUtil httpUtil = new QLHttpGet(context);
         httpUtil.setUrl(HttpConfig.getUrl(HttpConfig.COLSE_LIVESTREAM));
         httpUtil.setUseCache( false );
         HashMap<String, Object> entity = new HashMap<>();
         entity.put("member_id", QLConstant.client_id );
-        entity.put("org_id", org_id );
+        entity.put("live_id", live_id );
         httpUtil.setEntity( entity );
         httpUtil.startConnection(new QLHttpResult() {
             @Override
@@ -210,5 +211,75 @@ public class LivestreamController {
             }
         });
 }
+
+    /**
+     * 成员进入或退出直播间
+     * @param context
+     * @param live_id
+     * @param action
+     * @param listener
+     */
+    public static void enterExitLiveRoom(Context context, String live_id, String action , final Listener<Boolean, String> listener) {
+        QLHttpUtil httpUtil = new QLHttpGet(context);
+        httpUtil.setUrl(HttpConfig.getUrl(HttpConfig.LIVE_ENTER_EXIT));
+        httpUtil.setUseCache(false);
+        HashMap<String, Object> entity = new HashMap<>();
+        entity.put("wp_member_info_id", QLConstant.client_id);
+        entity.put("live_id", live_id);
+        entity.put("member_id", QLConstant.client_id);//
+        entity.put("action", action);
+        entity.put("token", QLConstant.token);
+        httpUtil.setEntity(entity);
+        httpUtil.startConnection(new QLHttpResult() {
+            @Override
+            public void reply(QLHttpReply reply) {
+                if (listener == null || listener.isCancel()) {
+                    return;
+                }
+                String msg;
+                YYResponseData responseData = YYResponseData.parseJsonString(reply.getReplyMsgAsString());
+                if (responseData != null && responseData.isSuccess()) {
+                    listener.onCallBack(true, null);
+                    return;
+                } else if (responseData != null) {
+                    msg = responseData.getErrorMsg();
+                } else {
+                    msg = "未知错误";
+                }
+                listener.onCallBack(false, msg);
+            }
+        });
+    }
+
+    public static void getLiveMemberList(Context context, String live_id,final Listener<String, List<LiveMemberInfo>> listener) {
+
+        QLHttpUtil httpUtil = new QLHttpGet(context);
+        httpUtil.setUrl(HttpConfig.getUrl(HttpConfig.GET_LIVE_AUDIENCE));
+
+        HashMap<String, Object> entity = new HashMap<>();
+        entity.put("live_id", live_id);
+        httpUtil.setUseCache(true);
+        httpUtil.setEntity(entity);
+        httpUtil.startConnection(new QLHttpResult() {
+            @Override
+            public void reply(QLHttpReply reply) {
+                if (listener == null || listener.isCancel()) {
+                    return;
+                }
+                String msg;
+                YYResponseData responseData = YYResponseData.parseJsonString(reply.getReplyMsgAsString());
+                if (responseData != null && responseData.isSuccess()) {
+                    listener.onCallBack(null, responseData.parseData("root", new TypeToken<List<LiveMemberInfo>>() {
+                    }));
+                    return;
+                } else if (responseData != null) {
+                    msg = responseData.getErrorMsg();
+                } else {
+                    msg = "未知错误";
+                }
+                listener.onCallBack(msg, null);
+            }
+        });
+    }
 
 }

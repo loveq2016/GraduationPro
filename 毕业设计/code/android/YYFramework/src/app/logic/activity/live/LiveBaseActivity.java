@@ -49,6 +49,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import app.config.http.HttpConfig;
+import app.logic.controller.LivestreamController;
 import app.logic.controller.OrganizationController;
 import app.logic.controller.UserManagerController;
 import app.logic.live.view.BarrageLayout;
@@ -57,6 +58,7 @@ import app.logic.live.view.LiveView;
 import app.logic.live.view.PeriscopeLayout;
 import app.logic.live.view.RoomMessagesView;
 import app.logic.live.view.RoomUserDetailsDialog;
+import app.logic.pojo.LiveMemberInfo;
 import app.logic.pojo.OrgRequestMemberInfo;
 import app.logic.pojo.UserInfo;
 import app.utils.common.Listener;
@@ -102,6 +104,7 @@ public abstract class LiveBaseActivity extends BaseActivity {
    * 直播id
    */
   protected String liveId = "";
+  protected String uesrLiveId;
   /**
    * 主播名字
    */
@@ -119,7 +122,7 @@ public abstract class LiveBaseActivity extends BaseActivity {
   volatile boolean isGift2Showing = false;
   List<String> toShowList = Collections.synchronizedList( new LinkedList<String>());
   //直播室成员列表
-  List<String> memberList = new ArrayList<>();
+  List<LiveMemberInfo> memberList = new ArrayList<>();
   List<String> memberList2 = new ArrayList<>();
   protected long watchNumber ;
   //当前组织的成员列表
@@ -144,12 +147,13 @@ public abstract class LiveBaseActivity extends BaseActivity {
             if( list != null && list.size() > watchNumber ){
               watchNumber = watchNumber + (list.size() - watchNumber);
             }
-            memberList.clear();
-            memberList.addAll(list);//获取群成员
+//            memberList.clear();
+//            memberList.addAll(list);//获取群成员
             runOnUiThread(new Runnable() {
               @Override
               public void run() {
-                memderAdapter.notifyDataSetChanged();
+//                memderAdapter.notifyDataSetChanged();
+                getMemberListInfo();
               }
             });
 
@@ -165,12 +169,13 @@ public abstract class LiveBaseActivity extends BaseActivity {
             if( list != null && list.size() > watchNumber ){
               watchNumber = watchNumber + (list.size() - watchNumber);
             }
-            memberList.clear();
-            memberList.addAll(list );//获取群成员
+//            memberList.clear();
+//            memberList.addAll(list );//获取群成员
             runOnUiThread(new Runnable() {
               @Override
               public void run() {
-                memderAdapter.notifyDataSetChanged();
+//                memderAdapter.notifyDataSetChanged();
+                getMemberListInfo();
               }
             });
           } catch (HyphenateException e) {
@@ -226,6 +231,22 @@ public abstract class LiveBaseActivity extends BaseActivity {
     }
   };
 
+  private void getMemberListInfo(){
+    LivestreamController.getLiveMemberList(this, uesrLiveId, new Listener<String, List<LiveMemberInfo>>() {
+      @Override
+      public void onCallBack(String s, List<LiveMemberInfo> reply) {
+        if (reply !=null && reply.size()>0){
+          memberList.clear();
+          memberList.addAll(reply);//获取群成员
+          memderAdapter.notifyDataSetChanged();
+          watchNumber = reply.size();
+          //直播室成员的 人数
+          audienceNumView.setText(String.valueOf(memberList.size()));
+        }
+      }
+    });
+  }
+
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -234,7 +255,6 @@ public abstract class LiveBaseActivity extends BaseActivity {
 
   //抽象方法，子类重写
   protected abstract void onActivityCreate(@Nullable Bundle savedInstanceState);
-
 
 
   //=============== 显示礼物的逻辑处理 =================
@@ -369,7 +389,8 @@ public abstract class LiveBaseActivity extends BaseActivity {
         EMClient.getInstance().chatManager().saveMessage(message);
         messageView.refreshSelectLast();
         //System.out.println(" 那个谁来了 ");
-        onRoomMemberAdded(participant);
+//        onRoomMemberAdded(participant);
+        getMemberListInfo();
         //聊天室成员加一
         watchNumber++ ;
       }
@@ -527,48 +548,50 @@ public abstract class LiveBaseActivity extends BaseActivity {
     memderAdapter = new AvatarAdapter(LiveBaseActivity.this);
     horizontalRecyclerView.setAdapter(memderAdapter);
     horizontalRecyclerView.setLayoutManager(layoutManager);
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          //根据直播室Id 获取直播室对象
-          group =  EMClient.getInstance().groupManager().getGroupFromServer(chatroomId);
-          //获取直播室的成员添加到列表集合中
-          watchNumber = group.getMembers().size();
-          memberList.addAll( group.getMembers() );
-        } catch (HyphenateException e) {
-          e.printStackTrace();
-        }
-        runOnUiThread(new Runnable() {
-          @Override
-            public void run() {
-            //直播室成员的 人数
-            audienceNumView.setText(String.valueOf(memberList.size()));
-            //适配器刷新数据
-            memderAdapter.notifyDataSetChanged();
-          }
-        });
-      }
-    }).start();
+//    new Thread(new Runnable() {
+//      @Override
+//      public void run() {
+//        try {
+//          //根据直播室Id 获取直播室对象
+//          group =  EMClient.getInstance().groupManager().getGroupFromServer(chatroomId);
+//          //获取直播室的成员添加到列表集合中
+//          watchNumber = group.getMembers().size();
+//          memberList.addAll( group.getMembers() );
+//        } catch (HyphenateException e) {
+//          e.printStackTrace();
+//        }
+//        runOnUiThread(new Runnable() {
+//          @Override
+//            public void run() {
+//            //直播室成员的 人数
+//            audienceNumView.setText(String.valueOf(memberList.size()));
+//            //适配器刷新数据
+//            memderAdapter.notifyDataSetChanged();
+//          }
+//        });
+//      }
+//    }).start();
+
+    getMemberListInfo();
   }
 
   /**
    * 直播室成员 增加
    * @param name
    */
-  private void onRoomMemberAdded(String name) {
-    if (!memberList.contains(name)) {
-      memberList.add(name);   //添加成员
-    }
-
-    runOnUiThread(new Runnable() {
-      @Override
-      public void run() {
-        audienceNumView.setText(String.valueOf(memberList.size()));
-        horizontalRecyclerView.getAdapter().notifyDataSetChanged();
-      }
-    });
-  }
+//  private void onRoomMemberAdded(String name) {
+//    if (!memberList.contains(name)) {
+//      memberList.add(name);   //添加成员
+//    }
+//
+//    runOnUiThread(new Runnable() {
+//      @Override
+//      public void run() {
+//        audienceNumView.setText(String.valueOf(memberList.size()));
+//        horizontalRecyclerView.getAdapter().notifyDataSetChanged();
+//      }
+//    });
+//  }
 
   /**
    * 直播室成员 减少
@@ -697,7 +720,7 @@ public abstract class LiveBaseActivity extends BaseActivity {
           //showUserDetailsDialog(memberList.get(position));
         }
       });
-       String headUrl = getUserHeadImgUrlByHXAccount( memberList.get(position) );
+       String headUrl = HttpConfig.getUrl(memberList.get(position).getPicture_url());//getUserHeadImgUrlByHXAccount( HttpConfig.getUrl(memberList.get(position).getPicture_url()) );
       Glide.with(context).load( headUrl ).placeholder(R.drawable.ease_default_avatar).into(holder.Avatar);
     }
 

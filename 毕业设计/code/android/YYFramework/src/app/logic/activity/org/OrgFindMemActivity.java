@@ -216,7 +216,7 @@ public class OrgFindMemActivity extends ActActivity implements OnClickListener, 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         OrgRecommendMemberInfo info = mAdapter.getItem(position - 1);
         if (info != null) {
-            startActivity(new Intent(OrgFindMemActivity.this, PreviewFriendsInfoActivity.class).putExtra(PreviewFriendsInfoActivity.kUSER_MEMBER_ID, info.getWp_member_info_id()).putExtra(PreviewFriendsInfoActivity.kFROM_CHART_ACTIVITY, false));
+            startActivity(new Intent(OrgFindMemActivity.this, PreviewFriendsInfoActivity.class).putExtra(PreviewFriendsInfoActivity.kUSER_MEMBER_ID, info.getWp_member_info_id()).putExtra(PreviewFriendsInfoActivity.kFROM_CHART_ACTIVITY, false).putExtra("FIND_MEMBER",true));
         }
     }
 }

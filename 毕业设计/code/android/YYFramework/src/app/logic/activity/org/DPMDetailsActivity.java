@@ -180,9 +180,9 @@ public class DPMDetailsActivity extends ActActivity implements IXListViewListene
 				if (reply != null ) {
 					memberList.clear();
 					for (UserInfo info : reply) {
-						if (info.getPhone() != null && !TextUtils.isEmpty( info.getPhone()) ) {
+//						if (info.getPhone() != null && !TextUtils.isEmpty( info.getPhone()) ) {
 							memberList.add( info );
-						}
+//						}
 					}
 					//对集合进行排序（ 管理员的在前面 ）
 					memberList = sortList( memberList ) ;

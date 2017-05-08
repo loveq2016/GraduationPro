@@ -122,7 +122,7 @@ public class ItmeGridViewAdpter extends BaseAdapter {
                 if(orgInfo.getFriend_name()!=null&& !TextUtils.isEmpty(orgInfo.getFriend_name())){
                     viewHolder.anchorNameTv.setText( orgInfo.getFriend_name());
                 }else{
-                    viewHolder.anchorNameTv.setText( orgInfo.getOrg_builder_name());
+                    viewHolder.anchorNameTv.setText( orgInfo.getLive_creator_name());
                 }
                 String url = HttpConfig.getUrl(orgInfo.getOrg_logo_url());
                 FrescoImageShowThumb.showThrumb(Uri.parse(url),viewHolder.orgLogoImg);
@@ -147,7 +147,7 @@ public class ItmeGridViewAdpter extends BaseAdapter {
                     if(orgInfo1.getFriend_name()!=null&& !TextUtils.isEmpty(orgInfo1.getFriend_name())){
                         viewHolder.anchorNameTv2.setText( orgInfo1.getFriend_name());
                     }else{
-                        viewHolder.anchorNameTv2.setText( orgInfo1.getOrg_builder_name());
+                        viewHolder.anchorNameTv2.setText( orgInfo1.getLive_creator_name());
                     }
                     String url = HttpConfig.getUrl(orgInfo1.getOrg_logo_url());
                     FrescoImageShowThumb.showThrumb(Uri.parse(url),viewHolder.orgLogoImg2);

@@ -42,6 +42,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
+import com.ta.utdid2.android.utils.SystemUtils;
 
 import org.QLConstant;
 import org.ql.activity.customtitle.ActActivity;
@@ -257,6 +258,7 @@ public class LaunchActivity extends ActActivity {  //ActActivity
 
         viewPager = (ViewPager) findViewById(R.id.launch_vp);
         btnBG_ll = (LinearLayout) findViewById(R.id.launch_btn_bg);
+        viewPager.setOffscreenPageLimit(5);
 
         view01 = inflater.inflate(R.layout.layout_launch_activity, null);
         view02 = inflater.inflate(R.layout.layout_launch_activity, null);
@@ -269,22 +271,6 @@ public class LaunchActivity extends ActActivity {  //ActActivity
         view03.findViewById(R.id.launch_iv).setBackgroundDrawable(resources.getDrawable(R.drawable.newlaunch003));
         view04.findViewById(R.id.launch_iv).setBackgroundDrawable(resources.getDrawable(R.drawable.newlaunch004));
         view05.findViewById(R.id.launch_iv).setBackgroundDrawable(resources.getDrawable(R.drawable.newlaunch005));
-
-//        ((TextView) view01.findViewById(R.id.launch_tv01)).setText("协作从格局开始");
-//        ((TextView) view01.findViewById(R.id.launch_tv02)).setText("发布需求、创建组织、管理分组成员");
-//        ((TextView) view01.findViewById(R.id.launch_tv03)).setText("一步到位");
-//
-//        ((TextView) view02.findViewById(R.id.launch_tv01)).setText("创建自己的工作圈");
-//        ((TextView) view02.findViewById(R.id.launch_tv02)).setText("组织成员、客户伙伴各种人脉快速找到");
-//        ((TextView) view02.findViewById(R.id.launch_tv03)).setText("协作关系更加轻松");
-//
-//        ((TextView) view03.findViewById(R.id.launch_tv01)).setText("圈内公告");
-//        ((TextView) view03.findViewById(R.id.launch_tv02)).setText("随时随地查看最新动态，收纳繁琐消息");
-//        ((TextView) view03.findViewById(R.id.launch_tv03)).setText("不易遗漏错过");
-//
-//        ((TextView) view04.findViewById(R.id.launch_tv01)).setText("组织管家");
-//        ((TextView) view04.findViewById(R.id.launch_tv02)).setText("一目了然，随我掌控");
-//        ((TextView) view04.findViewById(R.id.launch_tv03)).setText("开启智能化管理");
 
         pointView01 = (ImageView) findViewById(R.id.point_01);
         pointView02 = (ImageView) findViewById(R.id.point_02);
@@ -441,7 +427,6 @@ public class LaunchActivity extends ActActivity {  //ActActivity
                         }
                     });
                 }else{
-//                    Intent intent = new Intent(LaunchActivity.this, LoginActivity.class);
                     Intent intent = new Intent(LaunchActivity.this, PrepareLoginActivity.class);
                     startActivity(intent);
                     finish();
@@ -458,21 +443,25 @@ public class LaunchActivity extends ActActivity {  //ActActivity
         UpdataController.getAppVersion(this, new Listener<Void, List<UpdataAppInfo>>() {
             @Override
             public void onCallBack(Void status, List<UpdataAppInfo> reply) {
-                String versionName = SystemBuilderUtils.getInstance().getAppVersionName(LaunchActivity.this);//当前应用的版本名称
-                if (reply == null || reply.size() < 1 || null == versionName || TextUtils.isEmpty(versionName) ) {
+                int currVersionCode = SystemBuilderUtils.getAppVersionCode(LaunchActivity.this);
+                int latestVersionCode;
+                if (reply == null || reply.isEmpty()) {
                     initView(); //接口没有数据返回，或没有读取到的数据，用户还是可以用的。
                     return;
                 }
-                appInfo = reply.get(0);
-                String newversionName = appInfo.getApp_version(); //获取检测到的版本名称
-                versionName = versionName.replace(".","0");       //将 “.” 换成 “0” （ 以后有三个 . 这个也适合判断 ）
-                newversionName = newversionName.replace(".","0");
-                QLConstant.newVisionName = newversionName;
-                if(Long.parseLong(newversionName) > Long.parseLong(versionName)){  //有新版本
-                    showUpdataApp( SystemBuilderUtils.getInstance().getAppVersionName(LaunchActivity.this) ,appInfo );   //显示更新的对话框
-                }else{
-                    initView();                            //没有更新则跳过
+                try{
+                    appInfo = reply.get(0);
+                    String newversionName = appInfo.getApp_version(); //获取检测到的版本名称
+                    QLConstant.newVisionName = newversionName;
+                    latestVersionCode = Integer.parseInt(newversionName);
+                    if(latestVersionCode > currVersionCode){  //有新版本
+                        showUpdataApp( SystemBuilderUtils.getInstance().getAppVersionName(LaunchActivity.this) ,appInfo );   //显示更新的对话框
+                        return;
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
                 }
+                initView();
             }
         });
     }
@@ -483,7 +472,8 @@ public class LaunchActivity extends ActActivity {  //ActActivity
      * @param info
      */
     private void showUpdataApp(String oldVersionCode, final UpdataAppInfo info) {
-        tagEdt.setText("当前版本为" + oldVersionCode + ",检测到的最新版本为" + String.valueOf(info.getApp_version()) + ",是否要更新？？");
+        String notice = info.getApp_update_msg()+"";
+        tagEdt.setText(notice);
         if(info.getApp_update_force()!=0){
             lineView.setVisibility(View.GONE);
             cancel.setVisibility(View.GONE);

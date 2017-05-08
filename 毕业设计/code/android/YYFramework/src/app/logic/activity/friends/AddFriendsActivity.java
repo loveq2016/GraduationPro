@@ -706,13 +706,20 @@ public class AddFriendsActivity extends ActActivity implements OnClickListener, 
                     }
                 }
                 if (reply != null && reply.size() > 0) {
-                    String myPhone = UserManagerController.getCurrUserInfo().getPhone();
+                    String my_member_id = UserManagerController.getCurrUserInfo().getWp_member_info_id();
                     for (FriendInfo friendInfo : reply) {
-                        if (friendInfo.getPhone() != null && !friendInfo.getPhone().equals(myPhone)) {
+                        if (friendInfo.getWp_friends_info_id() != null && !friendInfo.getWp_friends_info_id().equals(my_member_id)) {
                             friendInfo.setOtherRequest(false);
                             tmpInfos.add(friendInfo);
                         }
                     }
+//                    String myPhone = UserManagerController.getCurrUserInfo().getPhone();
+//                    for (FriendInfo friendInfo : reply) {
+//                        if (friendInfo.getPhone() != null && !friendInfo.getPhone().equals(myPhone)) {
+//                            friendInfo.setOtherRequest(false);
+//                            tmpInfos.add(friendInfo);
+//                        }
+//                    }
                 }
                 // Collections.reverse(tmpInfos);
                 mAdapter.setDatas(tmpInfos);

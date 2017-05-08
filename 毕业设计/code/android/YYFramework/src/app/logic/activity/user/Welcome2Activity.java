@@ -106,26 +106,21 @@ public class Welcome2Activity extends ActActivity {
 		UpdataController.getAppVersion(this, new Listener<Void, List<UpdataAppInfo>>() {
 			@Override
 			public void onCallBack(Void status, List<UpdataAppInfo> reply) {
-				if (reply == null || reply.size() < 1) {
+				if (reply == null || reply.isEmpty()) {
 					return;
 				}
-				UpdataAppInfo info = reply.get(0);
-//				int versionCode = SystemBuilderUtils.getInstance().getAppVersionCode(Welcome2Activity.this);
-//				if (versionCode == -1) {
-//					return;
-//				}
-//				if (versionCode < Integer.parseInt(info.getApp_version())) {
-//					showUpdataApp(versionCode, info);
-//				}
+				try{
+					UpdataAppInfo info = reply.get(0);
+					int currVersionCode = SystemBuilderUtils.getAppVersionCode(Welcome2Activity.this);
+					String newversionName = info.getApp_version();
+					int latestVersion = Integer.parseInt(newversionName);
+					if (currVersionCode < latestVersion) {
+						showUpdataApp(newversionName, info);
+					}
+				}catch (Exception e){
+					e.printStackTrace();
+				}
 
-				String versionName = SystemBuilderUtils.getInstance().getAppVersionName(Welcome2Activity.this);//当前应用的版本名称
-				if( null == versionName || TextUtils.isEmpty(versionName)){
-					return;
-				}
-				String newversionName = info.getApp_version();
-				if(!versionName.equals(newversionName)){
-					showUpdataApp(versionName, info);
-				}
 			}
 		});
 	}
@@ -139,8 +134,8 @@ public class Welcome2Activity extends ActActivity {
 		View view = LayoutInflater.from(Welcome2Activity.this).inflate(R.layout.dialog_updata_app_layout, null);
 		alertDialog.setView(view);
 		TextView message_tv = (TextView) view.findViewById(R.id.message_tv);
-		//message_tv.setText("当前版本为" + String.valueOf(oldVersionCode) + "，检测到的最新版本为" + String.valueOf(info.getApp_version()) + ",是否要更新？？");
-		message_tv.setText("当前版本为" + oldVersionCode + "，检测到的最新版本为" + String.valueOf(info.getApp_version()) + ",是否要更新？？");
+		String notice = info.getApp_update_msg()+"";
+		message_tv.setText(notice);
 		Button yes_btn = (Button) view.findViewById(R.id.yes_btn);
 		final Button no_btn = (Button) view.findViewById(R.id.no_btn);
 

@@ -211,9 +211,9 @@ public class ContactsFragment extends Fragment implements IXListViewListener, On
 				}
 
 				if (reply != null && reply.size() > 0) {
-					String myPhone = UserManagerController.getCurrUserInfo().getPhone();
+					String myPhone = UserManagerController.getCurrUserInfo().getWp_member_info_id();
 					for (FriendInfo friendInfo : reply) {
-						if (friendInfo.getPhone() != null && !friendInfo.getPhone().equals(myPhone)) {
+						if (friendInfo.getWp_friends_info_id() != null && !friendInfo.getWp_friends_info_id().equals(myPhone)) {
 							friendInfo.setOtherRequest(false);
 							tmpInfos.add(friendInfo);
 						}

@@ -93,6 +93,7 @@ public class WXBindPhoneActivity extends ActActivity implements OnClickListener 
         titleHandler.getLeftLayout().setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(RESULT_OK);
                 finish();
             }
         });

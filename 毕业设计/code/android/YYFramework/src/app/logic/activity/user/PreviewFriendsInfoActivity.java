@@ -82,12 +82,15 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
     private Button delectBtn, sendBtn;  //删除和发送按钮
     private QRHelper qrHelper;
     private boolean isFriend = false;   //是好友的标志
+    private boolean isFromFindMember = false;
     private String fromOrg;
     private Handler roadingTimeHandler;
     private ActTitleHandler handler = new ActTitleHandler();
 
     private TextView mCountry,mCompany,mAddress,mDepart,mTrade,mBusiness,mWeb,mCompanyInfo;
     private SimpleDraweeView mCompanyLogo;
+    private View companyLL;
+    private ImageView openIcon;
 
     private Handler updateUIHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -109,6 +112,7 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
         info_str = getIntent().getStringExtra(kUSER_MEMBER_ID);
         fromChartActivity = getIntent().getBooleanExtra(kFROM_CHART_ACTIVITY, false);  //标志来自单聊时的界面
         fromOrg = getIntent().getStringExtra(FROMORG);
+        isFromFindMember = getIntent().getBooleanExtra("FIND_MEMBER",false);
         initView();
         if (info_str != null) {
             getUserInfo(info_str);  //获取用户信息
@@ -149,6 +153,9 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
         delectBtn.setOnClickListener(this);
         tagTextView.setOnClickListener(this);
         userHeadImgView.setOnClickListener(this);
+        openIcon = (ImageView) findViewById(R.id.icon_open);
+        companyLL = findViewById(R.id.all_company_ll);
+        findViewById(R.id.user_info_company_title_layout).setOnClickListener(this);
 
         mCountry = (TextView) findViewById(R.id.user_info_county_tv);
         mCompany = (TextView) findViewById(R.id.user_info_company_tv);
@@ -170,6 +177,10 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
         Uri headUri = Uri.parse(HttpConfig.getUrl(userInfo.getPicture_url()));
         Picasso.with(this).load(headUri).placeholder(R.drawable.default_user_icon).fit().centerCrop().into(userHeadImgView);
         //FrescoHelper.asyncLoad(this , Uri.parse(HttpConfig.getUrl(userInfo.getPicture_url())), userHeadImgView);
+        if (TextUtils.isEmpty(userInfo.getPhone()))
+            nicknameTV.setVisibility(View.INVISIBLE);
+        else
+            nicknameTV.setVisibility(View.VISIBLE);
         nicknameTV.setText("格局号:" + userInfo.getPhone());
         String fiderName = userInfo.getFriend_name() == null || TextUtils.isEmpty(userInfo.getFriend_name()) ? "" : userInfo.getFriend_name();
         String nickNameString = userInfo.getNickName();
@@ -256,10 +267,13 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
         }
         tagTextView.setText(userInfo.getFriend_name() == null || TextUtils.isEmpty(userInfo.getFriend_name()) ? userInfo.getNickName() : userInfo.getFriend_name());
         //是用户自己
-        if (userInfo.getWp_member_info_id().equals(UserManagerController.getCurrUserInfo().getWp_member_info_id())) {
+        if (isFromFindMember || userInfo.getWp_member_info_id().equals(UserManagerController.getCurrUserInfo().getWp_member_info_id())) {
             sendBtn.setVisibility(View.GONE);
             delectBtn.setVisibility(View.GONE);
             set_and_tagname.setVisibility(View.GONE);  //修改备注隐藏
+        }
+        if (isFromFindMember){
+
         }
         updateUIHandler.sendEmptyMessage(kMESSAGE_WHAT_UPDATE_UI);
     }
@@ -493,7 +507,11 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
         FrescoImageShowThumb.showThrumb(Uri.parse(userPic),pic);
         //FrescoHelper.asyncLoad( this ,Uri.parse(userPic), pic);
         nick.setText(userInfo.getNickName());
-        phone.setText("格局号：" + (TextUtils.isEmpty(userInfo.getPhone())?"":userInfo.getPhone()));
+        if (TextUtils.isEmpty(userInfo.getPhone()))
+            phone.setVisibility(View.INVISIBLE);
+        else
+            phone.setVisibility(View.VISIBLE);
+        phone.setText("格局号：" + userInfo.getPhone());
         String decodeString = null;
         try {
             decodeString = new String(usrInfoJson.getBytes(), "ISO-8859-1");
@@ -569,6 +587,15 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
             case R.id.user_info_company_img:
                 showFriendImg(userInfo.getCompany_logo());
                 break;
+            case R.id.user_info_company_title_layout:
+                if (companyLL.getVisibility() == View.VISIBLE){
+                    companyLL.setVisibility(View.GONE);
+                    openIcon.setImageResource(R.drawable.open_icon_company);
+                }else{
+                    companyLL.setVisibility(View.VISIBLE);
+                    openIcon.setImageResource(R.drawable.close_icon_company);
+                }
+                break;
             default:
                 break;
         }
@@ -583,7 +610,7 @@ public class PreviewFriendsInfoActivity extends ActActivity implements OnClickLi
             public void run() {
                 if( userInfo!=null){
                     try {
-                        EMClient.getInstance().contactManager().deleteContact(userInfo.getPhone());
+                        EMClient.getInstance().contactManager().deleteContact(userInfo.getWp_member_info_id());
                     } catch (HyphenateException e) {
                         e.printStackTrace();
                     }

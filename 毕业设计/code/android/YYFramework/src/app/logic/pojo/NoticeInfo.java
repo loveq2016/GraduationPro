@@ -31,6 +31,7 @@ public class NoticeInfo implements Serializable{
 	private String msg_notice_img ;
 	private String picture_url;
 	private String friend_name ;
+	private String org_logo_url;
 
 	public String getFriend_name() {
 		return friend_name;
@@ -166,5 +167,13 @@ public class NoticeInfo implements Serializable{
 
 	public void setIsParticipate(int isParticipate) {
 		this.isParticipate = isParticipate;
+	}
+
+	public String getOrg_logo_url() {
+		return org_logo_url;
+	}
+
+	public void setOrg_logo_url(String org_logo_url) {
+		this.org_logo_url = org_logo_url;
 	}
 }

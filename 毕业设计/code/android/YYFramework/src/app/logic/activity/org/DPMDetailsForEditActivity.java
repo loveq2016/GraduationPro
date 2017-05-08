@@ -487,9 +487,9 @@ public class DPMDetailsForEditActivity extends InitActActivity implements OnItem
 				userInfos.clear();
 				if (reply != null && reply.size() > 0) {
 					for (UserInfo info : reply) {
-						if (info.getPhone() != null && !TextUtils.isEmpty(info.getPhone())) {
+//						if (info.getPhone() != null && !TextUtils.isEmpty(info.getPhone())) {
 							userInfos.add(info);
-						}
+//						}
 					}
 					// userInfos.addAll(reply);
 				}

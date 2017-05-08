@@ -36,6 +36,7 @@ public class OrganizationInfo implements Serializable {
 
 	//
 	private String org_builder_name;
+	private String live_creator_name;
 
 	private String nickName;
 	private String picture_url;
@@ -334,5 +335,13 @@ public class OrganizationInfo implements Serializable {
 
 	public void setLive_id(String live_id) {
 		this.live_id = live_id;
+	}
+
+	public String getLive_creator_name() {
+		return live_creator_name;
+	}
+
+	public void setLive_creator_name(String live_creator_name) {
+		this.live_creator_name = live_creator_name;
 	}
 }

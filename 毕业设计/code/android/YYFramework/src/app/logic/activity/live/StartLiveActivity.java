@@ -53,6 +53,8 @@ import com.ucloud.ulive.widget.UAspectFrameLayout;
 import org.ql.utils.QLToastUtils;
 import java.util.List;
 import java.util.Random;
+
+import app.config.YYAppConfig;
 import app.config.http.HttpConfig;
 import app.logic.activity.main.HomeActivity;
 import app.logic.controller.LivestreamController;
@@ -145,7 +147,7 @@ public class StartLiveActivity extends LiveBaseActivity  implements TextureView.
     private boolean isOpend ;
     private int c = 1 , m = 3  ;
     protected UEasyStreaming mEasyStreaming;
-    protected String rtmpPushStreamDomain = "rtmp://publish.krapnik.cn/ucloud/";
+    protected String rtmpPushStreamDomain = YYAppConfig.UCLOUND_PUSH_STREAM;
     public static final int MSG_UPDATE_COUNTDOWN = 1;
     public static final int COUNTDOWN_DELAY = 1000;
     public static final int COUNTDOWN_START_INDEX = 3;
@@ -180,6 +182,7 @@ public class StartLiveActivity extends LiveBaseActivity  implements TextureView.
         ShareSDK.initSDK(this);
         ButterKnife.bind(this);
         liveId = getIntent().getStringExtra(PrepareStartLiveActivity.LIVE_ID);
+        uesrLiveId = liveId;
         liveBack = (LiveView) findViewById( R.id.liveback);
         liveBack.setRoomMessgeViewShow( this );    //上滑显示消息列表，下滑隐藏消息列表
         orgId = getIntent().getStringExtra(ORG_ID);
@@ -239,7 +242,7 @@ public class StartLiveActivity extends LiveBaseActivity  implements TextureView.
                 //显示直播结果View
                 liveRseltDialog.show();
                 //关闭直播
-                colseLiveStream( orgId ) ;
+                colseLiveStream( liveId ) ;
                 //停止心跳
                 stopPost();
             }
@@ -949,8 +952,8 @@ public class StartLiveActivity extends LiveBaseActivity  implements TextureView.
      * @param
      * @param
      */
-    private void colseLiveStream( String org_id  ) {
-        LivestreamController.colseLiveStream(this , org_id  , new Listener<Boolean, String>() {
+    private void colseLiveStream( String live_id  ) {
+        LivestreamController.colseLiveStream(this , live_id  , new Listener<Boolean, String>() {
             @Override
             public void onCallBack(Boolean aBoolean, String reply) {
                 if ( aBoolean ) {

@@ -144,12 +144,13 @@ public class LiveListFragment extends Fragment implements View.OnClickListener ,
                     ((TYBaseActivity)context).dismissWaitDialog();
                     if(aBoolean){
                         Intent intent = new Intent();
-                        intent.putExtra(LiveDetailsActivity.PLUG,isOnLiveOrgInfo.getPlug_id()); //直播Id
+                        intent.putExtra(LiveDetailsActivity.PLUG,isOnLiveOrgInfo.getPlug_id()); //直播流Id
+                        intent.putExtra(LiveDetailsActivity.USER_LIVE_ID,isOnLiveOrgInfo.getLive_id()); //直播Id
                         intent.putExtra(LiveDetailsActivity.ROOM_ID , isOnLiveOrgInfo.getRoom_id() );
                         intent.putExtra(LiveDetailsActivity.ORG_ID , isOnLiveOrgInfo.getOrg_id() );
                         intent.putExtra(LiveDetailsActivity.ORG_NAME , isOnLiveOrgInfo.getOrg_name() );
                         intent.putExtra(LiveDetailsActivity.ORG_LOG_URL , isOnLiveOrgInfo.getOrg_logo_url() );
-                        intent.putExtra(LiveDetailsActivity.ORG_BUIDER_NAME , isOnLiveOrgInfo.getOrg_builder_name());
+                        intent.putExtra(LiveDetailsActivity.ORG_BUIDER_NAME , isOnLiveOrgInfo.getLive_creator_name());
                         intent.setClass( context , LiveDetailsActivity.class);
                         context.startActivity( intent );
                     }else{
@@ -378,7 +379,7 @@ public class LiveListFragment extends Fragment implements View.OnClickListener ,
             Intent intent = new Intent();
             intent.putExtra(StartLiveActivity.ORG_ID , orgInfo.getOrg_id());
             intent.putExtra(StartLiveActivity.ORG_NAME, orgInfo.getOrg_name());
-            intent.putExtra(StartLiveActivity.ORG_BUIDER_NAME ,orgInfo.getNickName());
+            intent.putExtra(StartLiveActivity.ORG_BUIDER_NAME ,orgInfo.getLive_creator_name());
             intent.putExtra(StartLiveActivity.ORG_LOGO_URL ,orgInfo.getOrg_logo_url());
             intent.putExtra(PrepareStartLiveActivity.LIVE_ID ,orgInfo.getLive_id());
             intent.setClass( context , PrepareStartLiveActivity.class );

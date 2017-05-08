@@ -59,6 +59,7 @@
 
     <!-- 读取联系人权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <!--< 直播 >-->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
@@ -224,7 +225,7 @@
         <!-- 环信 gzyueyun#gzyyxiehuimng -->
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="gzyueyun#testgejue" />
+            android:value="gzyueyun#gzyyxiehuimng" />
         <!--android:value="gzyueyun#gzyyxiehuimng" gzyueyun#testgejue/>-->
 
 
@@ -708,6 +709,9 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name="app.logic.activity.org.OrganizationListActivity2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="app.logic.activity.org.DPMListNewActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name="app.logic.activity.friends.LogicFriends"

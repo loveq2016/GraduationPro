@@ -142,6 +142,10 @@ public class PrepareStartLiveActivity extends ActActivity implements OnClickList
                 finish();
                 break;
             case R.id.start_btn:
+                if (TextUtils.isEmpty(liveTitle.getText().toString())){
+                    QLToastUtils.showToast(this,"请输入直播标题");
+                    return;
+                }
                 showWaitDialog();
                 new Thread(new Runnable() {
                     @Override

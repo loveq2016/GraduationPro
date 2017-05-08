@@ -40,7 +40,7 @@ android {
         config {
             keyAlias 'ncyl'
             keyPassword 'yueyunkey'
-            storeFile file('E:/key/ncylks')
+            storeFile file('ncylks')
             storePassword 'yueyunkey'
         }
     }

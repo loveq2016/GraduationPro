@@ -22,6 +22,10 @@ public class IsOnLiveOrgInfo {
     private String live_title;
     private String live_cover;
 
+
+    private String live_creator_id ;
+    private String live_creator_name ;
+
     public String getStart_time() {
         return start_time;
     }
@@ -134,5 +138,21 @@ public class IsOnLiveOrgInfo {
 
     public void setLive_cover(String live_cover) {
         this.live_cover = live_cover;
+    }
+
+    public String getLive_creator_id() {
+        return live_creator_id;
+    }
+
+    public void setLive_creator_id(String live_creator_id) {
+        this.live_creator_id = live_creator_id;
+    }
+
+    public String getLive_creator_name() {
+        return live_creator_name;
+    }
+
+    public void setLive_creator_name(String live_creator_name) {
+        this.live_creator_name = live_creator_name;
     }
 }

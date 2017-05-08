@@ -59,7 +59,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/tx_name"
                     android:visibility="gone"
-                    android:text="格局号："
+                    android:text=""
                     android:textSize="12sp" />
             </LinearLayout>
         </RelativeLayout>

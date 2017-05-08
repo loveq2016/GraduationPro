@@ -91,35 +91,23 @@ public class AboutMeActivity extends InitActActivity implements OnClickListener 
 	 */
 	private void checkUpdataApp() {
 		// 开始检查网络版本
-
 		UpdataController.getAppVersion(this, new Listener<Void, List<UpdataAppInfo>>() {
-
 			@Override
 			public void onCallBack(Void status, List<UpdataAppInfo> reply) {
-				if (reply == null || reply.size() < 1) {
+				if (reply == null || reply.isEmpty()) {
 					return;
 				}
-				UpdataAppInfo info = reply.get(0);
-
-//				int versionCode = SystemBuilderUtils.getInstance().getAppVersionCode(AboutMeActivity.this);
-//				if (versionCode == -1) {
-//					return;
-//				}
-//				//
-//				if (versionCode < Integer.parseInt(info.getApp_version())) {
-//					// showUpdataApp(versionCode, info);
-//					updataAppInfo = info;
-//					app_UpdataStatus.setVisibility(View.VISIBLE);
-//				}
-
-				String versionName = SystemBuilderUtils.getInstance().getAppVersionName(AboutMeActivity.this);//当前应用的版本名称
-				if( null == versionName || TextUtils.isEmpty(versionName)){
-					return;
-				}
-				String newversionName = info.getApp_version();
-				if(!versionName.equals(newversionName)){
-					updataAppInfo = info;
-					app_UpdataStatus.setVisibility(View.VISIBLE);
+				try{
+					UpdataAppInfo info = reply.get(0);
+					int currVersionCode = SystemBuilderUtils.getInstance().getAppVersionCode(AboutMeActivity.this);
+					String newversionName = info.getApp_version();
+					int latestVersion = Integer.parseInt(newversionName);
+					if (latestVersion > currVersionCode){
+						updataAppInfo = info;
+						app_UpdataStatus.setVisibility(View.VISIBLE);
+					}
+				}catch (Exception e){
+					e.printStackTrace();
 				}
 
 			}

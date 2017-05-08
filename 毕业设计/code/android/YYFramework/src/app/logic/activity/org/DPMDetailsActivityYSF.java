@@ -485,9 +485,9 @@ public class DPMDetailsActivityYSF extends ActActivity implements View.OnClickLi
                 }
                 List<OrgRequestMemberInfo> lastInfos = new ArrayList<OrgRequestMemberInfo>();
                 for (OrgRequestMemberInfo memberInfo : reply) {
-                    if (TextUtils.isEmpty(memberInfo.getPhone())) {        //手機號為空的，不是真實有效的數據
-                        continue;
-                    }
+//                    if (TextUtils.isEmpty(memberInfo.getPhone())) {        //手機號為空的，不是真實有效的數據
+//                        continue;
+//                    }
                     if (TextUtils.isEmpty(memberInfo.getDepartmentId())) {   //添加不輸與任何部門的成員
                         lastInfos.add(memberInfo);
                     }
@@ -500,7 +500,7 @@ public class DPMDetailsActivityYSF extends ActActivity implements View.OnClickLi
                 for (OrgRequestMemberInfo memberInfo : lastInfos) {
                     boolean temp = true;
                     for (ExpansionInfo expansionInfo : datas) {
-                        if (memberInfo.getPhone().equals(expansionInfo.getItemPhone())) {
+                        if (memberInfo.getWp_member_info_id().equals(expansionInfo.getWp_member_info_id())) {
                             temp = false;
                         }
                     }

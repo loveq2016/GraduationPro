@@ -175,9 +175,9 @@ public class SelectMemberToDPMEDActivity extends InitActActivity implements OnIt
 				// 筛选剩下未有加入的分组成员
 				for (OrgRequestMemberInfo info : reply) {
 					if (info.getDepartmentId() == null || TextUtils.isEmpty(info.getDepartmentId())) {
-						if (info.getPhone() == null || TextUtils.isEmpty(info.getPhone())) {
-							continue;
-						}
+//						if (info.getPhone() == null || TextUtils.isEmpty(info.getPhone())) {
+//							continue;
+//						}
 						allItemList.add(info);
 					}
 				}
